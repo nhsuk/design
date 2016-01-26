@@ -10,5 +10,8 @@
   "dependencies": {
     "express": "^4.13.4",
     "express-nunjucks": "^0.9.6"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
   }
 }
