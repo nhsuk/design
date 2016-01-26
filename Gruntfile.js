@@ -26,14 +26,24 @@ module.exports = function(grunt) {
 				files: '**/*.scss',
 				tasks: ['sass']
 			}
-		}
+		},
+
+    concurrent: {
+  		target: {
+  			tasks: ['nodemon', 'watch'],
+  			options: {
+  				logConcurrentOutput: true
+  			}
+  		}
+  	}
 
   });
 
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-concurrent');
 
-  grunt.registerTask('default', ['watch', 'nodemon']);
+  grunt.registerTask('default', ['concurrent:target']);
 
 };
