@@ -1,0 +1,13 @@
+{
+  "name": "design",
+  "version": "1.0.0",
+  "description": "Design.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhsalpha/design.git"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
