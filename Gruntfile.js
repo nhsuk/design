@@ -19,13 +19,21 @@ module.exports = function(grunt) {
           'assets/css/main.css': 'assets/scss/main.scss'
         }
       }
-    }
+    },
+
+    watch: {
+			css: {
+				files: '**/*.scss',
+				tasks: ['sass']
+			}
+		}
 
   });
 
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['sass', 'nodemon']);
+  grunt.registerTask('default', ['watch', 'nodemon']);
 
 };
