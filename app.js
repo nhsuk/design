@@ -4,7 +4,7 @@ var app = express();
 
 // Application settings
 app.set('view engine', 'html');
-app.set('views', __dirname + '/templates');
+app.set('views', __dirname + '/views');
 
 nunjucks.setup({
   autoescape: true,
