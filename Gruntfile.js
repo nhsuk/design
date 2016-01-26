@@ -4,17 +4,28 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    // nodemon watches for changes and restarts app
     nodemon: {
       dev: {
         script: 'app.js'
       }
     },
 
+    sass: {
+      dist: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          'assets/css/main.css': 'assets/scss/main.scss'
+        }
+      }
+    }
+
   });
 
   grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
-  grunt.registerTask('default', ['nodemon']);
+  grunt.registerTask('default', ['sass', 'nodemon']);
 
 };
