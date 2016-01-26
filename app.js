@@ -13,7 +13,7 @@ nunjucks.setup({
 }, app);
 
 app.get('/', function (req, res) {
-  res.render('index', { foo: 'bar' });
+  res.render('index', { foo: 'guff' });
 });
 
 app.listen(3000, function () {
