@@ -1,5 +1,14 @@
-$test: blue;
+@import "variables/colours";
 
-body {
-  background: $test;
-}
+@import "tools/contain-floats";
+
+@import "modules/layout/layout";
+@import "modules/layout/grid";
+
+@import "modules/typography/lato";
+@import "modules/typography/links";
+
+// Global page elements
+@import "modules/header-global/header-global";
+@import "modules/footer-global/footer-global";
+@import "modules/header-local/header-local";

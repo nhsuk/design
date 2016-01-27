@@ -1,3 +1,11 @@
-hello
+{% extends "_layouts/_layout-default.html" %}
 
-{{ foo }}
+{% set pagetitle = "Index" %}
+
+{% block localheader %}{% endblock %}
+
+{% block content %}
+  <div class="content">
+    Index.
+  </div>
+{% endblock %}

@@ -6,6 +6,8 @@ var app = express();
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
+app.use(express.static('assets'));
+
 nunjucks.setup({
   autoescape: true,
   watch: true,
@@ -13,7 +15,26 @@ nunjucks.setup({
 }, app);
 
 app.get('/', function (req, res) {
-  res.render('index', { foo: 'guff' });
+  res.render('index');
+});
+
+// auto render any view that exists
+app.get(/^\/([^.]+)$/, function (req, res) {
+  var path = (req.params[0]);
+  res.render(path, function(err, html) {
+    if (err) {
+      res.render(path + "/index", function(err2, html) {
+        if (err2) {
+          console.log(err);
+          res.status(404).send(err + "<br>" + err2);
+        } else {
+          res.end(html);
+        }
+      });
+    } else {
+      res.end(html);
+    }
+  });
 });
 
 app.listen(3000, function () {
