@@ -32,7 +32,7 @@ h1,
 h2,
 .heading-xlarge {
   margin: 0;
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 400;
   line-height: $leading*4;
 }
@@ -41,6 +41,14 @@ h3,
 .heading-large {
   margin: 0;
   font-size: 24px;
+  font-weight: 400;
+  line-height: $leading*2;
+}
+
+h4,
+.heading-body {
+  margin: 0;
+  font-size: 18px;
   font-weight: 400;
   line-height: $leading*2;
 }
