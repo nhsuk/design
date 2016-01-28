@@ -7,9 +7,15 @@ body {
 // Block for a layout "row" - i.e. header, content, footer
 %block,
 .content {
-  width: 100%;
   max-width: 960px;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @include media(980px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 // Reading width

@@ -6,7 +6,8 @@
 .header-container {
   @extend %block;
   @extend %contain-floats;
-  padding: 23px 0;
+  padding-top: 23px;
+  padding-bottom: 23px;
 }
 
 .header-logo {
@@ -24,6 +25,7 @@
   float: right;
 
   input {
+    display: none;  // This is not right. Work on interaction for this.
     box-sizing: border-box;
     float: left;
     height: 42px;
@@ -31,6 +33,10 @@
     padding: 0;
     background-color: $white;
     border: 1px solid #00365D;
+
+    @include media(480px) {
+      display: block;
+    }
   }
 
   button {

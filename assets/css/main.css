@@ -79,9 +79,17 @@ body {
 
 .header-container, .footer-container, .header-local-container,
 .content {
-  width: 100%;
   max-width: 960px;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 980px) {
+  .header-container, .footer-container, .header-local-container,
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .measure {
@@ -144,7 +152,8 @@ body {
 }
 
 .header-container {
-  padding: 23px 0;
+  padding-top: 23px;
+  padding-bottom: 23px;
 }
 
 .header-logo {
@@ -161,6 +170,7 @@ body {
   float: right;
 }
 .header-search input {
+  display: none;
   box-sizing: border-box;
   float: left;
   height: 42px;
@@ -168,6 +178,11 @@ body {
   padding: 0;
   background-color: #ffffff;
   border: 1px solid #00365D;
+}
+@media (min-width: 480px) {
+  .header-search input {
+    display: block;
+  }
 }
 .header-search button {
   box-sizing: border-box;
@@ -190,7 +205,8 @@ html {
 }
 
 .footer-container {
-  padding: 40px 0 80px 0;
+  padding-top: 40px;
+  padding-bottom: 80px;
 }
 .footer-container nav ul {
   list-style: none;
@@ -213,7 +229,8 @@ html {
 }
 
 .header-local-container {
-  padding: 100px 0 70px 0;
+  padding-top: 100px;
+  padding-right: 70px;
 }
 
 /*# sourceMappingURL=main.css.map */
