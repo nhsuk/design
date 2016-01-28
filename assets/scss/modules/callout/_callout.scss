@@ -1,13 +1,19 @@
 .callout {
-  width: 240px;
 }
 
 .callout.aside {
   position: relative;
   z-index: 1;
-  float: right;
-  top: -30px;
-  padding: 60px 30px 30px;
+  top: -15px;
+  max-width: 34em;
+  padding: 30px;
+
+  @include media(large) {
+    float: right;
+    width: 240px;
+    top: -80px;
+    padding-top: 60px;
+  }
 }
 
 .callout.emergency {

@@ -20,35 +20,3 @@ body {
   background-repeat: repeat-y;
   background-size: 100% $leading;
 }
-
-h1,
-.heading-xxlarge {
-  margin: 0;
-  font-size: 60px;
-  font-weight: 400;
-  line-height: $leading*5;
-}
-
-h2,
-.heading-xlarge {
-  margin: 0;
-  font-size: 46px;
-  font-weight: 400;
-  line-height: $leading*4;
-}
-
-h3,
-.heading-large {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: $leading*2;
-}
-
-h4,
-.heading-body {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: $leading*2;
-}

@@ -1,10 +1,13 @@
 @import "variables/colours";
 
 @import "tools/contain-floats";
+@import "tools/media-queries";
 
 @import "modules/typography/lato";
-@import "modules/typography/links";
+@import "modules/typography/headings";
+@import "modules/typography/paragraphs";
 @import "modules/typography/lists";
+@import "modules/typography/links";
 
 @import "modules/layout/layout";
 @import "modules/layout/grid";
