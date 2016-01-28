@@ -165,6 +165,7 @@ body {
   position: relative;
   z-index: 1;
   top: -15px;
+  max-width: 34em;
   padding: 30px;
 }
 @media (min-width: 980px) {
