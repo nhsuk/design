@@ -13,14 +13,9 @@
 //     }
 //   }
 
-
 @mixin media($size: false) {
   @if $size == large {
-    @media (min-width: 769px) {
-      @content;
-    }
-  } @else if $size == medium {
-    @media (min-width: 641px) {
+    @media (min-width: 980px) {
       @content;
     }
   } @else {

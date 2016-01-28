@@ -7,6 +7,11 @@
   @extend %block;
   @extend %contain-floats;
 
-  padding-top: 100px;
-  padding-right: 70px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+  @include media(large) {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
 }

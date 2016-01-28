@@ -24,25 +24,40 @@ body {
 h1,
 .heading-xxlarge {
   margin: 0;
-  font-size: 60px;
+  font-size: 32px;
+  line-height: $leading*4;
   font-weight: 400;
   line-height: $leading*5;
+
+  @include media(large) {
+    font-size: 60px;
+    line-height: $leading*5;
+  }
 }
 
 h2,
 .heading-xlarge {
   margin: 0;
-  font-size: 46px;
+  font-size: 26px;
   font-weight: 400;
-  line-height: $leading*4;
+  line-height: $leading*3;
+
+  @include media(large) {
+    font-size: 46px;
+    line-height: $leading*4;
+  }
 }
 
 h3,
 .heading-large {
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   line-height: $leading*2;
+
+  @include media(large) {
+    font-size: 24px;
+  }
 }
 
 h4,
