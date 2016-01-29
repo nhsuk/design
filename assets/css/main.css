@@ -161,12 +161,17 @@ body {
   float: left;
 }
 
+.callout {
+  margin: 28px 0;
+  padding: 14px 30px;
+}
+
 .callout.aside {
   position: relative;
   z-index: 1;
   top: -15px;
   max-width: 34em;
-  padding: 30px;
+  margin-top: 0;
 }
 @media (min-width: 980px) {
   .callout.aside {
@@ -183,6 +188,10 @@ body {
 .callout.emergency * {
   color: #ffffff;
   font-weight: 700;
+}
+
+.callout.info {
+  background-color: #fffab3;
 }
 
 #global-header {
