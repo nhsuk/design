@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic,300italic,700italic);
+@import url(http://fast.fonts.net/cssapi/50c9c92a-7fe0-4c8b-bd64-c7d3d2fafc87.css);
 .grid-row, .header-container, .footer-container, .header-local-container {
   zoom: 1;
 }
@@ -9,8 +9,8 @@
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-family: "Myriad W01", sans-serif;
+  font-weight: 200;
   font-size: 18px;
   line-height: 28px;
 }
@@ -23,7 +23,7 @@ h1, .heading-xxlarge {
   margin: 0;
   padding: 14px 0;
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 70px;
 }
 @media (min-width: 980px) {
@@ -37,7 +37,7 @@ h2, .heading-xlarge {
   margin: 0;
   padding: 14px 0;
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 42px;
 }
 @media (min-width: 980px) {
@@ -51,7 +51,7 @@ h3, .heading-large {
   margin: 0;
   padding: 14px 0;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 28px;
 }
 @media (min-width: 980px) {
@@ -64,7 +64,7 @@ h4, .heading-body {
   margin: 0;
   padding: 14px 0;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 28px;
 }
 
@@ -215,7 +215,7 @@ body {
 }
 .callout.emergency * {
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .callout.info {
