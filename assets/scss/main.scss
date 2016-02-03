@@ -1,8 +1,8 @@
-@import "variables/lato"; // hot swappable type
-@import "variables/colours";
-
 @import "tools/contain-floats";
 @import "tools/media-queries";
+
+@import "variables/lato"; // hot swappable type
+@import "variables/colours";
 
 @import "modules/typography/base";
 @import "modules/typography/headings";
