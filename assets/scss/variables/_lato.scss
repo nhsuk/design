@@ -13,6 +13,11 @@ body {
   line-height: $leading*2;
 }
 
+// Reading width
+.measure {
+  max-width: 34em;
+}
+
 h1 {
   margin: 0; padding: $leading 0;
   font-size: 32px;

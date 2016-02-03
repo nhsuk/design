@@ -15,6 +15,10 @@ body {
   line-height: 28px;
 }
 
+.measure {
+  max-width: 34em;
+}
+
 h1, .heading-xxlarge {
   margin: 0;
   padding: 14px 0;
@@ -153,10 +157,6 @@ body {
     padding-top: 48px;
     padding-bottom: 56px;
   }
-}
-
-.measure {
-  max-width: 34em;
 }
 
 .grid-row {
