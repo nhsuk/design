@@ -11,8 +11,8 @@ html {
   @extend %block;
   @extend %contain-floats;
 
-  padding-top: 40px;
-  padding-bottom: 80px;
+  padding-top: $leading*3;
+  padding-bottom: $leading*6;
 
   nav ul {
     list-style: none;

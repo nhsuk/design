@@ -1,6 +1,6 @@
 .callout {
-  margin: 28px 0;
-  padding: 14px 30px;
+  margin: $leading*2 0;
+  padding: $leading $leading*2;
 }
 
 .callout.aside {

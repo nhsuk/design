@@ -5,9 +5,9 @@
   box-sizing: border-box;
   display: inline-block;
   min-width: 280px;
-  height: 56px;
-  line-height: 56px;
-  padding: 0 14px;
+  height: $leading*4;
+  line-height: $leading*4;
+  padding: 0 $leading;
   border: 0;
   text-align: center;
   color: $white;

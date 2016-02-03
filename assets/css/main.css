@@ -154,7 +154,7 @@ body {
 
 @media (min-width: 980px) {
   .content {
-    padding-top: 48px;
+    padding-top: 42px;
     padding-bottom: 56px;
   }
 }
@@ -191,7 +191,7 @@ body {
 
 .callout {
   margin: 28px 0;
-  padding: 14px 30px;
+  padding: 14px 28px;
 }
 
 .callout.aside {
@@ -228,14 +228,13 @@ body {
 }
 
 .header-container {
-  padding-top: 23px;
-  padding-bottom: 23px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 
 .header-logo {
   display: block;
   float: left;
-  padding: 6px 0;
 }
 .header-logo img {
   display: block;
@@ -281,8 +280,8 @@ html {
 }
 
 .footer-container {
-  padding-top: 40px;
-  padding-bottom: 80px;
+  padding-top: 42px;
+  padding-bottom: 84px;
 }
 .footer-container nav ul {
   list-style: none;
@@ -305,12 +304,12 @@ html {
 }
 
 .header-local-container {
-  padding-top: 35px;
-  padding-bottom: 35px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 @media (min-width: 980px) {
   .header-local-container {
-    padding-top: 100px;
+    padding-top: 98px;
     padding-bottom: 70px;
   }
 }
