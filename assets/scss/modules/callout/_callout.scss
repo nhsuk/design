@@ -19,7 +19,7 @@
 }
 
 .callout.emergency {
-  background-color: rgba(231, 9, 16, 0.8);
+  background-color: rgba($red, 0.8);
 
   * {
     color: $white;
@@ -28,5 +28,5 @@
 }
 
 .callout.info {
-  background-color: #fffab3;
+  background-color: rgba($yellow, 0.2);
 }

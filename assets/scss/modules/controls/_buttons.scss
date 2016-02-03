@@ -11,9 +11,9 @@
   border: 0;
   text-align: center;
   color: $white;
-  background-color: #76BD18;
+  background-color: $green;
   cursor: pointer;
-  border: 2px solid #6AAB20;
+  border: 2px solid $dark-green;
   border-radius: 0;
   -webkit-appearance: none;
 
@@ -23,7 +23,7 @@
   &:visited {
     text-decoration: none;
     color: $white;
-    background-color: #76BD18;
+    background-color: $green;
   }
 
   @include media(large) {
