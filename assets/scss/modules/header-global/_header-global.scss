@@ -6,14 +6,13 @@
 .header-container {
   @extend %block;
   @extend %contain-floats;
-  padding-top: 23px;
-  padding-bottom: 23px;
+  padding-top: $leading*2;
+  padding-bottom: $leading*2;
 }
 
 .header-logo {
   display: block;
   float: left;
-  padding: 6px 0;
 
   img {
     display: block;
@@ -28,11 +27,11 @@
     display: none;  // This is not right. Work on interaction for this.
     box-sizing: border-box;
     float: left;
-    height: 42px;
+    height: $leading*3;
     width: 338px;
     padding: 0;
     background-color: $white;
-    border: 1px solid #00365D;
+    border: 1px solid $dark-blue;
 
     @include media(480px) {
       display: block;
@@ -42,11 +41,11 @@
   button {
     box-sizing: border-box;
     float: left;
-    height: 42px;
-    width: 42px;
+    height: $leading*3;
+    width: $leading*3;
     text-indent: -999em;
-    background: url("/images/icon-search.svg") center center no-repeat #00365D;
+    background: url("/images/icon-search.svg") center center no-repeat $dark-blue;
     background-size: 16px;
-    border: 1px solid #00365D;
+    border: 1px solid $dark-blue;
   }
 }

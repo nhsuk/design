@@ -1,18 +1,18 @@
 html {
-  background-color: #f2f2f2;
+  background-color: $light-grey;
 }
 
 #global-footer {
-  border-top: 1px solid #e6e6e6;
-  background-color: #f2f2f2;
+  border-top: 1px solid $grey;
+  background-color: $light-grey;
 }
 
 .footer-container {
   @extend %block;
   @extend %contain-floats;
 
-  padding-top: 40px;
-  padding-bottom: 80px;
+  padding-top: $leading*3;
+  padding-bottom: $leading*6;
 
   nav ul {
     list-style: none;

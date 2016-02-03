@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic,300italic,700italic);
+@import url(http://fast.fonts.net/cssapi/50c9c92a-7fe0-4c8b-bd64-c7d3d2fafc87.css);
 .grid-row, .header-container, .footer-container, .header-local-container {
   zoom: 1;
 }
@@ -9,10 +9,66 @@
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-family: "Myriad W01", sans-serif;
+  font-weight: 200;
   font-size: 18px;
   line-height: 28px;
+}
+
+.measure {
+  max-width: 34em;
+}
+
+h1, .heading-xxlarge {
+  margin: 0;
+  padding: 14px 0;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 70px;
+}
+@media (min-width: 980px) {
+  h1, .heading-xxlarge {
+    font-size: 60px;
+    line-height: 70px;
+  }
+}
+
+h2, .heading-xlarge {
+  margin: 0;
+  padding: 14px 0;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 42px;
+}
+@media (min-width: 980px) {
+  h2, .heading-xlarge {
+    font-size: 46px;
+    line-height: 56px;
+  }
+}
+
+h3, .heading-large {
+  margin: 0;
+  padding: 14px 0;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+}
+@media (min-width: 980px) {
+  h3, .heading-large {
+    font-size: 24px;
+  }
+}
+
+h4, .heading-body {
+  margin: 0;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+body {
   color: #231f20;
 }
 
@@ -23,63 +79,6 @@ body {
   background-image: linear-gradient(to bottom, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-repeat: repeat-y;
   background-size: 100% 14px;
-}
-
-h1,
-.heading-xxlarge {
-  margin: 0;
-  padding: 14px 0;
-  font-size: 32px;
-  line-height: 56px;
-  font-weight: 400;
-  line-height: 70px;
-}
-@media (min-width: 980px) {
-  h1,
-  .heading-xxlarge {
-    font-size: 60px;
-    line-height: 70px;
-  }
-}
-
-h2,
-.heading-xlarge {
-  margin: 0;
-  padding: 14px 0;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 42px;
-}
-@media (min-width: 980px) {
-  h2,
-  .heading-xlarge {
-    font-size: 46px;
-    line-height: 56px;
-  }
-}
-
-h3,
-.heading-large {
-  margin: 0;
-  padding: 14px 0;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 28px;
-}
-@media (min-width: 980px) {
-  h3,
-  .heading-large {
-    font-size: 24px;
-  }
-}
-
-h4,
-.heading-body {
-  margin: 0;
-  padding: 14px 0;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
 }
 
 p {
@@ -155,13 +154,9 @@ body {
 
 @media (min-width: 980px) {
   .content {
-    padding-top: 48px;
+    padding-top: 42px;
     padding-bottom: 56px;
   }
-}
-
-.measure {
-  max-width: 34em;
 }
 
 .grid-row {
@@ -196,7 +191,7 @@ body {
 
 .callout {
   margin: 28px 0;
-  padding: 14px 30px;
+  padding: 14px 28px;
 }
 
 .callout.aside {
@@ -220,11 +215,11 @@ body {
 }
 .callout.emergency * {
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .callout.info {
-  background-color: #fffab3;
+  background-color: rgba(255, 237, 0, 0.2);
 }
 
 #global-header {
@@ -233,14 +228,13 @@ body {
 }
 
 .header-container {
-  padding-top: 23px;
-  padding-bottom: 23px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 
 .header-logo {
   display: block;
   float: left;
-  padding: 6px 0;
 }
 .header-logo img {
   display: block;
@@ -286,8 +280,8 @@ html {
 }
 
 .footer-container {
-  padding-top: 40px;
-  padding-bottom: 80px;
+  padding-top: 42px;
+  padding-bottom: 84px;
 }
 .footer-container nav ul {
   list-style: none;
@@ -310,12 +304,12 @@ html {
 }
 
 .header-local-container {
-  padding-top: 35px;
-  padding-bottom: 35px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 @media (min-width: 980px) {
   .header-local-container {
-    padding-top: 100px;
+    padding-top: 98px;
     padding-bottom: 70px;
   }
 }

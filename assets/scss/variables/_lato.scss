@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic,300italic,700italic);
+
+$body: 18px;
+$leading: 14px;
+$family: "Lato", sans-serif;
+$bodyweight: 300;
+$boldweight: 400;
+$heavyweight: 700;
+
+body {
+  font-family: $family;
+  font-weight: $bodyweight;
+  font-size: $body;
+  line-height: $leading*2;
+}
+
+// Reading width
+.measure {
+  max-width: 34em;
+}
+
+h1 {
+  margin: 0; padding: $leading 0;
+  font-size: 32px;
+  font-weight: $boldweight;
+  line-height: $leading*5;
+
+  @include media(large) {
+    font-size: 60px;
+    line-height: $leading*5;
+  }
+}
+
+h2 {
+  margin: 0; padding: $leading 0;
+  font-size: 26px;
+  font-weight: $boldweight;
+  line-height: $leading*3;
+
+  @include media(large) {
+    font-size: 46px;
+    line-height: $leading*4;
+  }
+}
+
+h3 {
+  margin: 0; padding: $leading 0;
+  font-size: 20px;
+  font-weight: $boldweight;
+  line-height: $leading*2;
+
+  @include media(large) {
+    font-size: 24px;
+  }
+}
+
+h4 {
+  margin: 0; padding: $leading 0;
+  font-size: $body;
+  font-weight: $boldweight;
+  line-height: $leading*2;
+}

@@ -20,12 +20,7 @@ body {
 
 .content {
   @include media(large) {
-    padding-top: 48px;
-    padding-bottom: 56px;
+    padding-top: $leading*3;
+    padding-bottom: $leading*4;
   }
-}
-
-// Reading width
-.measure {
-  max-width: 34em;
 }

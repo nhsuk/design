@@ -1,6 +1,6 @@
 .callout {
-  margin: 28px 0;
-  padding: 14px 30px;
+  margin: $leading*2 0;
+  padding: $leading $leading*2;
 }
 
 .callout.aside {
@@ -19,14 +19,14 @@
 }
 
 .callout.emergency {
-  background-color: rgba(231, 9, 16, 0.8);
+  background-color: rgba($red, 0.8);
 
   * {
     color: $white;
-    font-weight: 700;
+    font-weight: $heavyweight;
   }
 }
 
 .callout.info {
-  background-color: #fffab3;
+  background-color: rgba($yellow, 0.2);
 }
