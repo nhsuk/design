@@ -1,5 +1,6 @@
 .image-module {
-padding: $leading*2 0;
+  margin: 0 0 $leading*2 0;
+  min-height: $leading*18 ;
 }
 
 .image-module img {
@@ -13,4 +14,6 @@ padding: $leading*2 0;
     overflow: auto; 
     }
   }
+
+
 

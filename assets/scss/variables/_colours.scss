@@ -3,10 +3,20 @@ $pure-black: #000000;
 $black: #231f20;
 $white: #ffffff;
 
+/* 
+
+these should be a scale of tint: blue00, blue10...blue70.... 
+i.e. NHS is blue50 as thats a median point, and if we add dark or light tints, 
+we can add other blues, named like blue40 (for a lighter blue) or blue60 for a darker blue.
+
+*/
 
 $blue: #0072C6;
 $dark-blue: #00365D;
-$light-blue: #0988E7;
+$light-blue: #0988E7; 
+$light-blue2: #66B0E8; 
+$light-blue2: #70C1FF;
+
 $yellow: #FFED00;
 $red: #E70910;
 $green: #76BD18;

@@ -8,6 +8,13 @@
   clear: both;
 }
 
+/* 
+
+these should be a scale of tint: blue00, blue10...blue70.... 
+i.e. NHS is blue50 as thats a median point, and if we add dark or light tints, 
+we can add other blues, named like blue40 (for a lighter blue) or blue60 for a darker blue.
+
+*/
 body {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -21,10 +28,11 @@ body {
 
 h1, .heading-xxlarge {
   margin: 0;
-  padding: 14px 0;
+  padding: 0 0 28px 0;
   font-size: 32px;
   font-weight: 400;
   line-height: 70px;
+  letter-spacing: 0.008em;
 }
 @media (min-width: 980px) {
   h1, .heading-xxlarge {
@@ -35,24 +43,30 @@ h1, .heading-xxlarge {
 
 h2, .heading-xlarge {
   margin: 0;
-  padding: 14px 0;
+  padding: 0 0 28px 0;
   font-size: 26px;
   font-weight: 400;
   line-height: 42px;
+  letter-spacing: 0.016em;
 }
 @media (min-width: 980px) {
   h2, .heading-xlarge {
-    font-size: 46px;
+    font-size: 42px;
     line-height: 56px;
   }
 }
 
+h2.on-white, .on-white.heading-xlarge {
+  color: #0072C6;
+}
+
 h3, .heading-large {
   margin: 0;
-  padding: 14px 0;
+  padding: 0 0 28px 0;
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
+  letter-spacing: 0.016em;
 }
 @media (min-width: 980px) {
   h3, .heading-large {
@@ -62,10 +76,25 @@ h3, .heading-large {
 
 h4, .heading-body {
   margin: 0;
-  padding: 14px 0;
+  padding: 0 0 14px 0;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
+  letter-spacing: 0.016em;
+}
+
+/* Lato specific font formtting */
+p {
+  letter-spacing: 0.019em;
+}
+
+.callout li {
+  font-weight: 400;
+  letter-spacing: 0.049em;
+}
+
+.callout h3, .callout .heading-large {
+  letter-spacing: 0.038em;
 }
 
 body {
@@ -82,15 +111,15 @@ body {
 }
 
 p {
-  margin: 14px 0;
+  margin: 0 0 14px 0;
 }
 
 ul, ol {
-  margin: 14px 0;
+  margin: 0 0 14px 0;
   padding-left: 1em;
 }
 ul li, ol li {
-  margin: 14px 0;
+  margin: 0 0 14px 0;
   padding-left: 0;
 }
 
@@ -192,6 +221,8 @@ body {
 .callout {
   margin: 28px 0;
   padding: 14px 28px;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 .callout.aside {
@@ -206,24 +237,26 @@ body {
     float: right;
     width: 240px;
     top: -80px;
-    padding-top: 28px;
+    padding-top: 42px;
   }
 }
 
 .callout.emergency {
   background-color: rgba(231, 9, 16, 0.8);
 }
-.callout.emergency * {
-  color: #ffffff;
-  font-weight: 700;
-}
 
 .callout.info {
   background-color: rgba(255, 237, 0, 0.2);
 }
 
+a {
+  color: #70C1FF;
+  text-decoration: underline;
+}
+
 .image-module {
-  padding: 28px 0;
+  margin: 0 0 28px 0;
+  min-height: 252px;
 }
 
 .image-module img {

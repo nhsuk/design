@@ -20,10 +20,11 @@ body {
 }
 
 h1 {
-  margin: 0; padding: $leading 0;
+  margin: 0; padding: 0 0 $leading*2 0;
   font-size: 32px;
   font-weight: $boldweight;
   line-height: $leading*5;
+  letter-spacing: 0.008em;
 
   @include media(large) {
     font-size: 60px;
@@ -32,22 +33,29 @@ h1 {
 }
 
 h2 {
-  margin: 0; padding: $leading 0;
+  margin: 0; padding: 0 0 $leading*2 0;
   font-size: 26px;
   font-weight: $boldweight;
   line-height: $leading*3;
+  letter-spacing: 0.016em;
 
   @include media(large) {
-    font-size: 46px;
+    font-size: 42px;
     line-height: $leading*4;
   }
 }
 
+h2.on-white
+{
+  color: $blue;
+}
+
 h3 {
-  margin: 0; padding: $leading 0;
+  margin: 0; padding: 0 0 $leading*2 0;
   font-size: 20px;
   font-weight: $boldweight;
   line-height: $leading*2;
+  letter-spacing: 0.016em;
 
   @include media(large) {
     font-size: 24px;
@@ -55,8 +63,24 @@ h3 {
 }
 
 h4 {
-  margin: 0; padding: $leading 0;
+  margin: 0; padding: 0 0 $leading 0;
   font-size: $body;
   font-weight: $boldweight;
   line-height: $leading*2;
+  letter-spacing: 0.016em;
+}
+
+/* Lato specific font formtting */
+p{
+  letter-spacing: 0.019em;
+}
+
+.callout li {
+  font-weight: $boldweight;
+  letter-spacing: 0.049em;
+}
+
+.callout h3
+{
+  letter-spacing: 0.038em;
 }
