@@ -206,7 +206,7 @@ body {
     float: right;
     width: 240px;
     top: -80px;
-    padding-top: 60px;
+    padding-top: 28px;
   }
 }
 
@@ -222,8 +222,19 @@ body {
   background-color: rgba(255, 237, 0, 0.2);
 }
 
-.image-description {
-  float: right;
+.image-module {
+  padding: 28px 0;
+}
+
+.image-module img {
+  margin-right: 28px;
+  float: left;
+}
+
+@media (min-width: 980px) {
+  .image-description {
+    overflow: auto;
+  }
 }
 
 #global-header {

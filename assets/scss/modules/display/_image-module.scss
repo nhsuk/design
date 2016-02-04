@@ -1,14 +1,16 @@
 .image-module {
+padding: $leading*2 0;
+}
+
+.image-module img {
+  margin-right: 28px;
+  float: left;
 
 }
 
-.image-description {
-  
- float: right;
-
+.image-description{
   @include media(large) {
-    
-
+    overflow: auto; 
+    }
   }
-}
 
