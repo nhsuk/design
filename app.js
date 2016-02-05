@@ -8,6 +8,12 @@ app.set('views', __dirname + '/views');
 
 app.use(express.static('assets'));
 
+// pass GA tracking code to all templates
+app.use(function(req, res, next){
+  res.locals.GOOGLE_ANALYTICS_TRACKING_ID = process.env.GOOGLE_ANALYTICS_TRACKING_ID;
+  next();
+});
+
 nunjucks.setup({
   autoescape: true,
   watch: true,
