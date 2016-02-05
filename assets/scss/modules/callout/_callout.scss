@@ -1,9 +1,6 @@
 .callout {
   margin: $leading*2 0;
   padding: $leading $leading*2;
-  
-  font-weight: $boldweight;
-  color: $white;
 }
 
 .callout.aside {
@@ -16,26 +13,32 @@
   @include media(large) {
     float: right;
     width: 240px;
-    top: -80px;
+    top: -1*$leading*5;
     padding-top: $leading*3;
   }
 }
 
 .callout.emergency {
   background-color: rgba($red, 0.8);
+  font-weight: $boldweight;
+  color: $white;
 
-  * {
-      
+  * {  
     
   }
+}
+
+.callout.emergency a
+{
+  color: $light-blue2;
+  text-decoration: underline;
 }
 
 .callout.info {
   background-color: rgba($yellow, 0.2);
 }
 
-
-a{
-  color: $light-blue2;
-  text-decoration: underline;
+.callout.gp
+{
+  border: 4px solid $light-blue2;
 }

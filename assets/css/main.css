@@ -31,7 +31,7 @@ h1, .heading-xxlarge {
   padding: 0 0 28px 0;
   font-size: 32px;
   font-weight: 400;
-  line-height: 70px;
+  line-height: 42px;
   letter-spacing: 0.008em;
 }
 @media (min-width: 980px) {
@@ -88,6 +88,21 @@ p {
   letter-spacing: 0.019em;
 }
 
+p.lede {
+  margin: 0;
+  padding: 0 0 28px 0;
+  font-size: 20px;
+  letter-spacing: 0.016em;
+  line-height: 35px;
+  font-weight: 300;
+}
+@media (min-width: 980px) {
+  p.lede {
+    font-size: 24px;
+  }
+}
+
+/* _callout.scss stylings specific to lato */
 .callout li {
   font-weight: 400;
   letter-spacing: 0.049em;
@@ -110,6 +125,19 @@ body {
   background-size: 100% 14px;
 }
 
+/* remove undelines for a tags used as anchors */
+h1 a, .heading-xxlarge a,
+h2 a,
+.heading-xlarge a,
+h3 a,
+.heading-large a,
+h4 a,
+.heading-body a,
+h5 a,
+h6 a {
+  text-decoration: none;
+}
+
 p {
   margin: 0 0 14px 0;
 }
@@ -121,6 +149,12 @@ ul, ol {
 ul li, ol li {
   margin: 0 0 14px 0;
   padding-left: 0;
+}
+
+ul.link-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -221,8 +255,6 @@ body {
 .callout {
   margin: 28px 0;
   padding: 14px 28px;
-  font-weight: 400;
-  color: #ffffff;
 }
 
 .callout.aside {
@@ -236,22 +268,28 @@ body {
   .callout.aside {
     float: right;
     width: 240px;
-    top: -80px;
+    top: -70px;
     padding-top: 42px;
   }
 }
 
 .callout.emergency {
   background-color: rgba(231, 9, 16, 0.8);
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.callout.emergency a {
+  color: #66B0E8;
+  text-decoration: underline;
 }
 
 .callout.info {
   background-color: rgba(255, 237, 0, 0.2);
 }
 
-a {
-  color: #70C1FF;
-  text-decoration: underline;
+.callout.gp {
+  border: 4px solid #66B0E8;
 }
 
 .image-module {
@@ -361,6 +399,10 @@ html {
     padding-top: 98px;
     padding-bottom: 70px;
   }
+}
+
+.header-local-container a {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=main.css.map */
