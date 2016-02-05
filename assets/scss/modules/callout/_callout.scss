@@ -13,20 +13,27 @@
   @include media(large) {
     float: right;
     width: 240px;
-    top: -80px;
-    padding-top: 60px;
+    top: -1*$leading*5;
+    padding-top: $leading*3;
   }
 }
 
 .callout.emergency {
   background-color: rgba($red, 0.8);
+  font-weight: $boldweight;
+  color: $white;
+}
 
-  * {
-    color: $white;
-    font-weight: $heavyweight;
-  }
+.callout.emergency a {
+  color: $light-blue2;
+  text-decoration: underline;
 }
 
 .callout.info {
   background-color: rgba($yellow, 0.2);
+}
+
+.callout.gp {
+  padding: $leading*2;
+  border: 14px solid $light-blue2;
 }

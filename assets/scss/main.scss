@@ -1,8 +1,8 @@
 @import "tools/contain-floats";
 @import "tools/media-queries";
 
-@import "variables/myriad"; // hot swappable type
 @import "variables/colours";
+@import "variables/lato"; // hot swappable type
 
 @import "modules/typography/base";
 @import "modules/typography/headings";
@@ -16,6 +16,7 @@
 @import "modules/layout/grid";
 
 @import "modules/callout/callout";
+@import "modules/display/image-module";
 
 // Global page elements
 @import "modules/header-global/header-global";

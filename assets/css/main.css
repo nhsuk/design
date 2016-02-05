@@ -1,4 +1,4 @@
-@import url(http://fast.fonts.net/cssapi/50c9c92a-7fe0-4c8b-bd64-c7d3d2fafc87.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic,300italic,700italic);
 .grid-row, .header-container, .footer-container, .header-local-container {
   zoom: 1;
 }
@@ -8,9 +8,16 @@
   clear: both;
 }
 
+/* 
+
+these should be a scale of tint: blue00, blue10...blue70.... 
+i.e. NHS is blue50 as thats a median point, and if we add dark or light tints, 
+we can add other blues, named like blue40 (for a lighter blue) or blue60 for a darker blue.
+
+*/
 body {
-  font-family: "Myriad W01", sans-serif;
-  font-weight: 200;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
   font-size: 18px;
   line-height: 28px;
 }
@@ -21,10 +28,11 @@ body {
 
 h1, .heading-xxlarge {
   margin: 0;
-  padding: 14px 0;
+  padding: 0 0 28px 0;
   font-size: 32px;
-  font-weight: 300;
-  line-height: 70px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0.008em;
 }
 @media (min-width: 980px) {
   h1, .heading-xxlarge {
@@ -35,24 +43,30 @@ h1, .heading-xxlarge {
 
 h2, .heading-xlarge {
   margin: 0;
-  padding: 14px 0;
+  padding: 0 0 28px 0;
   font-size: 26px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 42px;
+  letter-spacing: 0.016em;
 }
 @media (min-width: 980px) {
   h2, .heading-xlarge {
-    font-size: 46px;
+    font-size: 42px;
     line-height: 56px;
   }
 }
 
+h2.on-white, .on-white.heading-xlarge {
+  color: #0072C6;
+}
+
 h3, .heading-large {
   margin: 0;
-  padding: 14px 0;
+  padding: 0 0 28px 0;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 28px;
+  letter-spacing: 0.016em;
 }
 @media (min-width: 980px) {
   h3, .heading-large {
@@ -62,10 +76,40 @@ h3, .heading-large {
 
 h4, .heading-body {
   margin: 0;
-  padding: 14px 0;
+  padding: 0 0 14px 0;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 28px;
+  letter-spacing: 0.016em;
+}
+
+/* Lato specific font formtting */
+p {
+  letter-spacing: 0.019em;
+}
+
+p.lede {
+  margin: 0;
+  padding: 0 0 28px 0;
+  font-size: 20px;
+  letter-spacing: 0.016em;
+  line-height: 35px;
+  font-weight: 300;
+}
+@media (min-width: 980px) {
+  p.lede {
+    font-size: 24px;
+  }
+}
+
+/* _callout.scss stylings specific to lato */
+.callout li {
+  font-weight: 400;
+  letter-spacing: 0.049em;
+}
+
+.callout h3, .callout .heading-large {
+  letter-spacing: 0.038em;
 }
 
 body {
@@ -81,17 +125,36 @@ body {
   background-size: 100% 14px;
 }
 
+/* remove undelines for a tags used as anchors */
+h1 a, .heading-xxlarge a,
+h2 a,
+.heading-xlarge a,
+h3 a,
+.heading-large a,
+h4 a,
+.heading-body a,
+h5 a,
+h6 a {
+  text-decoration: none;
+}
+
 p {
-  margin: 14px 0;
+  margin: 0 0 14px 0;
 }
 
 ul, ol {
-  margin: 14px 0;
+  margin: 0 0 14px 0;
   padding-left: 1em;
 }
 ul li, ol li {
-  margin: 14px 0;
+  margin: 0 0 14px 0;
   padding-left: 0;
+}
+
+ul.link-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -205,26 +268,51 @@ body {
   .callout.aside {
     float: right;
     width: 240px;
-    top: -80px;
-    padding-top: 60px;
+    top: -70px;
+    padding-top: 42px;
   }
 }
 
 .callout.emergency {
   background-color: rgba(231, 9, 16, 0.8);
-}
-.callout.emergency * {
-  color: #ffffff;
   font-weight: 400;
+  color: #ffffff;
+}
+
+.callout.emergency a {
+  color: #66B0E8;
+  text-decoration: underline;
 }
 
 .callout.info {
   background-color: rgba(255, 237, 0, 0.2);
 }
 
+.callout.gp {
+  padding: 28px;
+  border: 14px solid #66B0E8;
+}
+
+.image-module {
+  margin: 0 0 28px 0;
+  min-height: 252px;
+}
+
+.image-module img {
+  margin-right: 28px;
+  float: left;
+}
+
+@media (min-width: 980px) {
+  .image-description {
+    overflow: auto;
+  }
+}
+
 #global-header {
   background-color: #0072C6;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  /* $page-colour */
 }
 
 .header-container {
@@ -312,6 +400,10 @@ html {
     padding-top: 98px;
     padding-bottom: 70px;
   }
+}
+
+.header-local-container a {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=main.css.map */
