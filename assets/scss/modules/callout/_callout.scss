@@ -22,14 +22,9 @@
   background-color: rgba($red, 0.8);
   font-weight: $boldweight;
   color: $white;
-
-  * {  
-    
-  }
 }
 
-.callout.emergency a
-{
+.callout.emergency a {
   color: $light-blue2;
   text-decoration: underline;
 }
@@ -38,7 +33,7 @@
   background-color: rgba($yellow, 0.2);
 }
 
-.callout.gp
-{
-  border: 4px solid $light-blue2;
+.callout.gp {
+  padding: $leading*2;
+  border: 14px solid $light-blue2;
 }

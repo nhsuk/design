@@ -289,7 +289,8 @@ body {
 }
 
 .callout.gp {
-  border: 4px solid #66B0E8;
+  padding: 28px;
+  border: 14px solid #66B0E8;
 }
 
 .image-module {
