@@ -103,9 +103,9 @@ p.lede {
 }
 
 /* _callout.scss stylings specific to lato */
-.callout li {
+.callout.emergency li {
   font-weight: 400;
-  letter-spacing: 0.049em;
+  letter-spacing: 0.029em;
 }
 
 .callout h3, .callout .heading-large {
