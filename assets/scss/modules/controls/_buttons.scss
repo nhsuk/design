@@ -6,7 +6,7 @@
   display: inline-block;
   min-width: 280px;
   height: $leading*4;
-  line-height: $leading*4;
+  line-height: $leading*3.6; /*Do we need a mixin for this  to determine line height based on font height? */
   padding: 0 $leading;
   border: 0;
   text-align: center;

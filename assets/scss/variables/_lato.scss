@@ -39,10 +39,10 @@ h2 {
   font-size: 26px;
   font-weight: $boldweight;
   line-height: $leading*3;
-  letter-spacing: 0.016em;
+  letter-spacing: 0.008em;
 
   @include media(large) {
-    font-size: 42px;
+    font-size: 40px;
     line-height: $leading*4;
   }
 }
@@ -57,7 +57,7 @@ h3 {
   font-size: 20px;
   font-weight: $boldweight;
   line-height: $leading*2;
-  letter-spacing: 0.016em;
+  letter-spacing: 0.0em;
 
   @include media(large) {
     font-size: 24px;
