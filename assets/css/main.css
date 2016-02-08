@@ -67,7 +67,7 @@ h3, .heading-large {
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
-  letter-spacing: 0.0em;
+  letter-spacing: 0.016em;
 }
 @media (min-width: 980px) {
   h3, .heading-large {

@@ -57,7 +57,7 @@ h3 {
   font-size: 20px;
   font-weight: $boldweight;
   line-height: $leading*2;
-  letter-spacing: 0.0em;
+  letter-spacing: 0.016em;
 
   @include media(large) {
     font-size: 24px;
