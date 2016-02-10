@@ -39,10 +39,10 @@ h2 {
   font-size: 26px;
   font-weight: $boldweight;
   line-height: $leading*3;
-  letter-spacing: 0.016em;
+  letter-spacing: 0.008em;
 
   @include media(large) {
-    font-size: 42px;
+    font-size: 40px;
     line-height: $leading*4;
   }
 }
@@ -94,9 +94,9 @@ p.lede {
 
 /* _callout.scss stylings specific to lato */
 
-.callout li {
+.callout.emergency li {
   font-weight: $boldweight;
-  letter-spacing: 0.049em;
+  letter-spacing: 0.029em;
 }
 
 .callout h3 {
