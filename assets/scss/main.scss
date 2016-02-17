@@ -2,7 +2,10 @@
 @import "tools/media-queries";
 
 @import "variables/colours";
-@import "variables/new-rail"; // hot swappable type
+@import "variables/lato"; // hot swappable type
+//@import "variables/frutiger";
+//@import "variables/myriad";
+//@import "variables/new-rail";
 
 @import "modules/typography/base";
 @import "modules/typography/headings";

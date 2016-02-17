@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic,300italic,700italic);
 .grid-row, .header-container, .footer-container, .header-local-container {
   zoom: 1;
 }
@@ -15,29 +16,11 @@ we can add other blues, named like blue40 (for a lighter blue) or blue60 for a d
 
 */
 /* #70C1FF */
-@font-face {
-  font-family: 'New Rail';
-  src: url("/fonts/NewRailAlphabet-LightWEB.woff");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'New Rail';
-  src: url("/fonts/NewRailAlphabet-MediumWEB.woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'New Rail';
-  src: url("/fonts/NewRailAlphabet-BoldWEB.woff");
-  font-weight: 600;
-  font-style: bold;
-}
 body {
-  font-family: "New Rail", sans-serif;
-  font-weight: 200;
-  font-size: 17px;
-  line-height: 24px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
 }
 
 .measure {
@@ -46,34 +29,88 @@ body {
 
 h1, .heading-xxlarge {
   margin: 0;
-  padding: 12px 0;
-  font-size: 54px;
-  font-weight: 200;
-  line-height: 60px;
+  padding: 0 0 28px 0;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0.008em;
+}
+@media (min-width: 980px) {
+  h1, .heading-xxlarge {
+    font-size: 60px;
+    line-height: 70px;
+  }
 }
 
 h2, .heading-xlarge {
   margin: 0;
-  padding: 12px 0;
-  font-size: 30px;
-  font-weight: 200;
-  line-height: 36px;
+  padding: 0 0 28px 0;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0.008em;
+}
+@media (min-width: 980px) {
+  h2, .heading-xlarge {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+
+h2.on-white, .on-white.heading-xlarge {
+  color: #0072C6;
 }
 
 h3, .heading-large {
   margin: 0;
-  padding: 12px 0;
-  font-size: 23px;
-  font-weight: 200;
-  line-height: 30px;
+  padding: 0 0 28px 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.016em;
+}
+@media (min-width: 980px) {
+  h3, .heading-large {
+    font-size: 24px;
+  }
 }
 
 h4, .heading-body {
   margin: 0;
-  padding: 12px 0;
-  font-size: 17px;
-  font-weight: 200;
-  line-height: 24px;
+  padding: 0 0 14px 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.016em;
+}
+
+/* Lato specific font formtting */
+p {
+  letter-spacing: 0.019em;
+}
+
+p.lede {
+  margin: 0;
+  padding: 0 0 28px 0;
+  font-size: 20px;
+  letter-spacing: 0.016em;
+  line-height: 35px;
+  font-weight: 300;
+}
+@media (min-width: 980px) {
+  p.lede {
+    font-size: 24px;
+  }
+}
+
+/* _callout.scss stylings specific to lato */
+.callout.emergency li {
+  font-weight: 400;
+  letter-spacing: 0.029em;
+}
+
+.callout h3, .callout .heading-large {
+  letter-spacing: 0.038em;
 }
 
 body {
@@ -86,7 +123,7 @@ body {
   background-image: -o-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-image: linear-gradient(to bottom, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-repeat: repeat-y;
-  background-size: 100% 12px;
+  background-size: 100% 14px;
 }
 
 /* remove undelines for a tags used as anchors */
@@ -103,17 +140,17 @@ h6 a {
 }
 
 p {
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
 }
 
 ul, ol {
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
   padding-left: 1em;
   list-style-type: square;
 }
 
 li {
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
   padding-left: 0;
 }
 
@@ -123,7 +160,7 @@ ul.link-list {
 }
 
 .callout.gp ul {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 a {
@@ -135,10 +172,10 @@ a {
   box-sizing: border-box;
   display: inline-block;
   min-width: 280px;
-  height: 48px;
-  line-height: 43.2px;
+  height: 56px;
+  line-height: 50.4px;
   /*Do we need a mixin for this  to determine line height based on font height? */
-  padding: 0 12px;
+  padding: 0 14px;
   border: 0;
   text-align: center;
   color: #ffffff;
@@ -187,8 +224,8 @@ body {
 
 @media (min-width: 980px) {
   .content {
-    padding-top: 36px;
-    padding-bottom: 48px;
+    padding-top: 42px;
+    padding-bottom: 56px;
   }
 }
 
@@ -223,8 +260,8 @@ body {
 }
 
 .callout {
-  margin: 24px 0;
-  padding: 12px 24px;
+  margin: 28px 0;
+  padding: 14px 28px;
 }
 
 .callout.aside {
@@ -238,8 +275,8 @@ body {
   .callout.aside {
     float: right;
     width: 240px;
-    top: -60px;
-    padding-top: 36px;
+    top: -70px;
+    padding-top: 42px;
   }
 }
 
@@ -259,13 +296,13 @@ body {
 }
 
 .callout.gp {
-  padding: 24px;
+  padding: 28px;
   border: 14px solid #66B0E8;
 }
 
 .image-module {
-  margin: 0 0 24px 0;
-  min-height: 216px;
+  margin: 0 0 28px 0;
+  min-height: 252px;
 }
 
 .image-module img {
@@ -286,8 +323,8 @@ body {
 }
 
 .header-container {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 
 .header-logo {
@@ -306,7 +343,7 @@ body {
   display: none;
   box-sizing: border-box;
   float: left;
-  height: 36px;
+  height: 42px;
   width: 338px;
   padding: 0;
   background-color: #ffffff;
@@ -320,8 +357,8 @@ body {
 .header-search button {
   box-sizing: border-box;
   float: left;
-  height: 36px;
-  width: 36px;
+  height: 42px;
+  width: 42px;
   text-indent: -999em;
   background: url("/images/icon-search.svg") center center no-repeat #00365D;
   background-size: 16px;
@@ -338,8 +375,8 @@ html {
 }
 
 .footer-container {
-  padding-top: 36px;
-  padding-bottom: 72px;
+  padding-top: 42px;
+  padding-bottom: 84px;
 }
 .footer-container nav ul {
   list-style: none;
@@ -362,13 +399,13 @@ html {
 }
 
 .header-local-container {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 @media (min-width: 980px) {
   .header-local-container {
-    padding-top: 84px;
-    padding-bottom: 60px;
+    padding-top: 98px;
+    padding-bottom: 70px;
   }
 }
 
