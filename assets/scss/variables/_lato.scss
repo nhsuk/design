@@ -86,6 +86,7 @@ p.lede {
   letter-spacing: 0.016em;
   line-height: $leading*2.5;
   font-weight: $bodyweight;
+  color: $light-blue3;
 
   @include media(large) {
     font-size: 24px;
@@ -94,11 +95,22 @@ p.lede {
 
 /* _callout.scss stylings specific to lato */
 
+.callout p {
+  font-weight: $bodyweight;
+}
+
 .callout.emergency li {
-  font-weight: $boldweight;
+  font-weight: $bodyweight;
   letter-spacing: 0.029em;
+  line-height: $leading*1.8;
 }
 
 .callout h3 {
   letter-spacing: 0.038em;
+}
+
+
+
+.button {
+  font-weight: $boldweight;
 }

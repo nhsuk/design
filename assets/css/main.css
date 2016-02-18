@@ -103,7 +103,7 @@ h6 a {
 }
 
 p {
-  margin: 0 0 13px 0;
+  margin: 0 0 19.5px 0;
 }
 
 ul, ol {
@@ -367,8 +367,8 @@ html {
 }
 @media (min-width: 980px) {
   .header-local-container {
-    padding-top: 91px;
-    padding-bottom: 65px;
+    padding-top: 104px;
+    padding-bottom: 39px;
   }
 }
 
