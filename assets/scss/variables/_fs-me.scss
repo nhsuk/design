@@ -51,7 +51,7 @@ h1 {
 h2 {
   margin: 0; padding: $leading 0;
   font-size: 30px;
-  font-weight: $bodyweight;
+  font-weight: $boldweight;
   line-height: $leading*3;
 
   @include media(large) {
@@ -61,7 +61,7 @@ h2 {
 h3 {
   margin: 0; padding: $leading 0;
   font-size: 23px;
-  font-weight: $bodyweight;
+  font-weight: $boldweight;
   //line-height: $leading*2;
   line-height: 30px;
 
@@ -72,6 +72,6 @@ h3 {
 h4 {
   margin: 0; padding: $leading 0;
   font-size: $body;
-  font-weight: $bodyweight;
+  font-weight: $boldweight;
   line-height: $leading*2;
 }

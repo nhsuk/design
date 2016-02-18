@@ -56,7 +56,7 @@ h2, .heading-xlarge {
   margin: 0;
   padding: 13px 0;
   font-size: 30px;
-  font-weight: 200;
+  font-weight: 600;
   line-height: 39px;
 }
 
@@ -64,7 +64,7 @@ h3, .heading-large {
   margin: 0;
   padding: 13px 0;
   font-size: 23px;
-  font-weight: 200;
+  font-weight: 600;
   line-height: 30px;
 }
 
@@ -72,7 +72,7 @@ h4, .heading-body {
   margin: 0;
   padding: 13px 0;
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 600;
   line-height: 26px;
 }
 
