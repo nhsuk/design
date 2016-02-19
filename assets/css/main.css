@@ -64,7 +64,7 @@ h2.on-white, .on-white.heading-xlarge {
 h3, .heading-large {
   margin: 0;
   padding: 0 0 14px 0;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 28px;
   letter-spacing: 0.016em;
@@ -227,8 +227,8 @@ body {
 .content {
   max-width: 960px;
   margin: 0 auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @media (min-width: 980px) {
   .header-container, .footer-container, .header-local-container,
@@ -283,9 +283,10 @@ body {
 .callout.aside {
   position: relative;
   z-index: 1;
-  top: -15px;
+  top: -14px;
   max-width: 34em;
   margin-top: 0;
+  padding-top: 28px;
 }
 @media (min-width: 980px) {
   .callout.aside {
@@ -415,7 +416,7 @@ html {
 }
 
 .header-local-container {
-  padding-top: 28px;
+  padding-top: 56px;
   padding-bottom: 28px;
 }
 @media (min-width: 980px) {
