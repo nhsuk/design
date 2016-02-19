@@ -29,9 +29,9 @@ body {
 
 h1, .heading-xxlarge {
   margin: 0;
-  padding: 0 0 28px 0;
+  padding: 0 0 14px 0;
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 42px;
   letter-spacing: 0.008em;
 }
@@ -44,9 +44,9 @@ h1, .heading-xxlarge {
 
 h2, .heading-xlarge {
   margin: 0;
-  padding: 0 0 28px 0;
+  padding: 0 0 14px 0;
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 42px;
   letter-spacing: 0.008em;
 }
@@ -63,9 +63,9 @@ h2.on-white, .on-white.heading-xlarge {
 
 h3, .heading-large {
   margin: 0;
-  padding: 0 0 28px 0;
+  padding: 0 0 14px 0;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 28px;
   letter-spacing: 0.016em;
 }
@@ -150,7 +150,7 @@ h6 a {
 }
 
 p {
-  margin: 0 0 21px 0;
+  margin: 28px 0 28px 0;
 }
 
 ul, ol {
@@ -167,6 +167,12 @@ li {
 ul.link-list {
   list-style-type: none;
   padding: 0;
+}
+
+ul ul {
+  margin: 14px 0 14px 0;
+  padding-left: 1em;
+  list-style-type: square;
 }
 
 .callout.gp ul {

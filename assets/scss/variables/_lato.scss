@@ -21,9 +21,9 @@ body {
 
 h1 {
   margin: 0;
-  padding: 0 0 $leading*2 0;
+  padding: 0 0 $leading 0;
   font-size: 32px;
-  font-weight: $boldweight;
+  font-weight: $heavyweight;
   line-height: $leading*3;
   letter-spacing: 0.008em;
 
@@ -35,9 +35,9 @@ h1 {
 
 h2 {
   margin: 0;
-  padding: 0 0 $leading*2 0;
+  padding: 0 0 $leading 0;
   font-size: 26px;
-  font-weight: $boldweight;
+  font-weight: $heavyweight;
   line-height: $leading*3;
   letter-spacing: 0.008em;
 
@@ -53,9 +53,9 @@ h2.on-white {
 
 h3 {
   margin: 0;
-  padding: 0 0 $leading*2 0;
+  padding: 0 0 $leading 0;
   font-size: 20px;
-  font-weight: $boldweight;
+  font-weight: $heavyweight;
   line-height: $leading*2;
   letter-spacing: 0.016em;
 
