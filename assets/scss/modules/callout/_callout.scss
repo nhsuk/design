@@ -21,8 +21,12 @@
 
 .callout.emergency {
   background-color: rgba($red, 0.8);
-  font-weight: $boldweight;
+  font-weight: $bodyweight;
   color: $white;
+}
+
+.callout li {
+  letter-spacing: 0.5px;
 }
 
 .callout.emergency a {

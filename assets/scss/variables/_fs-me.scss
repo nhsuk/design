@@ -19,16 +19,25 @@
   font-style: bold;
 }
 
+@font-face {
+  font-family: 'FS Me';
+  src: url('/fonts/FSMeWeb-Heavy.woff');
+  font-weight: 800;
+  font-style: bold;
+}
+
+
 $body: 18px;
-$leading: 13px;
+$leading: 14px;
 $family: "FS Me", sans-serif;
-$bodyweight: 200;
+$lightweight: 200;
+$bodyweight: 400;
 $boldweight: 600;
-$heavyweight: 600;
+$heavyweight: 800;
 
 body {
   font-family: $family;
-  font-weight: $bodyweight;
+  font-weight: $lightweight;
   font-size: $body;
   line-height: $leading*2;
 }
@@ -40,11 +49,13 @@ body {
 
 h1 {
   margin: 0; padding: $leading 0;
-  font-size: 54px;
-  font-weight: $bodyweight;
+  font-size: 56px;
+  font-weight: $boldweight;
   line-height: $leading*5;
 
   @include media(large) {
+    font-size: 60px;
+    font-weight: $boldweight;
   }
 }
 

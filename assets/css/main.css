@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic,300italic,700italic);
 .grid-row, .header-container, .footer-container, .header-local-container {
   zoom: 1;
 }
@@ -16,9 +15,33 @@ we can add other blues, named like blue40 (for a lighter blue) or blue60 for a d
 
 */
 /* #70C1FF */
+@font-face {
+  font-family: 'FS Me';
+  src: url("/fonts/FSMeWeb-Light.woff");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FS Me';
+  src: url("/fonts/FSMeWeb-Regular.woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FS Me';
+  src: url("/fonts/FSMeWeb-Bold.woff");
+  font-weight: 600;
+  font-style: bold;
+}
+@font-face {
+  font-family: 'FS Me';
+  src: url("/fonts/FSMeWeb-Heavy.woff");
+  font-weight: 800;
+  font-style: bold;
+}
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-family: "FS Me", sans-serif;
+  font-weight: 200;
   font-size: 18px;
   line-height: 28px;
 }
@@ -29,98 +52,40 @@ body {
 
 h1, .heading-xxlarge {
   margin: 0;
-  padding: 0 0 14px 0;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 42px;
-  letter-spacing: 0.008em;
+  padding: 14px 0;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 70px;
 }
 @media (min-width: 980px) {
   h1, .heading-xxlarge {
     font-size: 60px;
-    line-height: 70px;
+    font-weight: 600;
   }
 }
 
 h2, .heading-xlarge {
   margin: 0;
-  padding: 0 0 14px 0;
-  font-size: 26px;
-  font-weight: 700;
+  padding: 14px 0;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 42px;
-  letter-spacing: 0.008em;
-}
-@media (min-width: 980px) {
-  h2, .heading-xlarge {
-    font-size: 40px;
-    line-height: 56px;
-  }
-}
-
-h2.on-white, .on-white.heading-xlarge {
-  color: #0072C6;
 }
 
 h3, .heading-large {
   margin: 0;
-  padding: 0 0 14px 0;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: 0.016em;
-}
-@media (min-width: 980px) {
-  h3, .heading-large {
-    font-size: 24px;
-  }
+  padding: 14px 0;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 30px;
 }
 
 h4, .heading-body {
   margin: 0;
-  padding: 0 0 14px 0;
+  padding: 14px 0;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 28px;
-  letter-spacing: 0.016em;
-}
-
-/* Lato specific font formtting */
-p {
-  letter-spacing: 0.019em;
-}
-
-p.lede {
-  margin: 0;
-  padding: 0 0 28px 0;
-  font-size: 20px;
-  letter-spacing: 0.016em;
-  line-height: 35px;
-  font-weight: 300;
-  color: #A8E8FF;
-}
-@media (min-width: 980px) {
-  p.lede {
-    font-size: 24px;
-  }
-}
-
-/* _callout.scss stylings specific to lato */
-.callout p {
-  font-weight: 300;
-}
-
-.callout.emergency li {
-  font-weight: 300;
-  letter-spacing: 0.029em;
-  line-height: 25.2px;
-}
-
-.callout h3, .callout .heading-large {
-  letter-spacing: 0.038em;
-}
-
-.button {
-  font-weight: 400;
 }
 
 body {
@@ -198,8 +163,10 @@ a {
   background-color: #76BD18;
   cursor: pointer;
   border: 2px solid #6AAB20;
-  border-radius: 0;
+  border-radius: 2;
   -webkit-appearance: none;
+  font-weight: 400;
+  letter-spacing: 1.000px;
 }
 .button:link, .button:hover, .button:focus, .button:visited {
   text-decoration: none;
@@ -303,6 +270,10 @@ body {
   color: #ffffff;
 }
 
+.callout li {
+  letter-spacing: 0.5px;
+}
+
 .callout.emergency a {
   color: #A8E8FF;
   text-decoration: underline;
@@ -335,13 +306,19 @@ body {
 
 #global-header {
   background-color: #0072C6;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   /* $page-colour */
 }
 
 .header-container {
-  padding-top: 28px;
-  padding-bottom: 28px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+@media (min-width: 480px) {
+  .header-container {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
 }
 
 .header-logo {
@@ -416,8 +393,8 @@ html {
 }
 
 .header-local-container {
-  padding-top: 56px;
-  padding-bottom: 28px;
+  padding-top: 84px;
+  padding-bottom: 42px;
 }
 @media (min-width: 980px) {
   .header-local-container {
@@ -428,6 +405,16 @@ html {
 
 .header-local-container a {
   color: #ffffff;
+}
+
+.hr {
+  border: 1px solid red;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #e6e6e6;
 }
 
 /*# sourceMappingURL=main.css.map */
