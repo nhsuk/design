@@ -6,9 +6,10 @@
 .callout.aside {
   position: relative;
   z-index: 1;
-  top: -15px;
+  top: -14px;
   max-width: 34em;
   margin-top: 0;
+  padding-top: $leading*2;
 
   @include media(large) {
     float: right;
@@ -20,8 +21,12 @@
 
 .callout.emergency {
   background-color: rgba($red, 0.8);
-  font-weight: $boldweight;
+  font-weight: $bodyweight;
   color: $white;
+}
+
+.callout li {
+  letter-spacing: 0.5px;
 }
 
 .callout.emergency a {

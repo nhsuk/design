@@ -1,10 +1,29 @@
-@import url('http://fast.fonts.net/cssapi/50c9c92a-7fe0-4c8b-bd64-c7d3d2fafc87.css');
+@font-face {
+  font-family: 'New Rail';
+  src: url('/fonts/NewRailAlphabet-LightWEB.woff');
+  font-weight: 200;
+  font-style: normal;
+}
 
-$body: 18px;
+@font-face {
+  font-family: 'New Rail';
+  src: url('/fonts/NewRailAlphabet-MediumWEB.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'New Rail';
+  src: url('/fonts/NewRailAlphabet-BoldWEB.woff');
+  font-weight: 600;
+  font-style: bold;
+}
+
+$body: 17px;
 $leading: 12px;
-$family: "Neue Frutiger W01", sans-serif;
-$bodyweight: 400;
-$boldweight: 600;
+$family: "New Rail", sans-serif;
+$bodyweight: 200;
+$boldweight: 400;
 $heavyweight: 600;
 
 body {
@@ -21,7 +40,7 @@ body {
 
 h1 {
   margin: 0; padding: $leading 0;
-  font-size: 56px;
+  font-size: 54px;
   font-weight: $bodyweight;
   line-height: $leading*5;
 
@@ -31,7 +50,7 @@ h1 {
 
 h2 {
   margin: 0; padding: $leading 0;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: $bodyweight;
   line-height: $leading*3;
 
@@ -41,7 +60,7 @@ h2 {
 
 h3 {
   margin: 0; padding: $leading 0;
-  font-size: 26px;
+  font-size: 23px;
   font-weight: $bodyweight;
   //line-height: $leading*2;
   line-height: 30px;

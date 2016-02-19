@@ -9,8 +9,8 @@ body {
 .content {
   max-width: 960px;
   margin: 0 auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   @include media(large) {
     padding-left: 0;

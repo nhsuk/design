@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'FS Me';
+  src: url('/fonts/FSMeWeb-Light.woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FS Me';
+  src: url('/fonts/FSMeWeb-Regular.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FS Me';
+  src: url('/fonts/FSMeWeb-Bold.woff');
+  font-weight: 600;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'FS Me';
+  src: url('/fonts/FSMeWeb-Heavy.woff');
+  font-weight: 800;
+  font-style: bold;
+}
+
+
+$body: 18px;
+$leading: 14px;
+$family: "FS Me", sans-serif;
+$lightweight: 200;
+$bodyweight: 400;
+$boldweight: 600;
+$heavyweight: 800;
+
+body {
+  font-family: $family;
+  font-weight: $lightweight;
+  font-size: $body;
+  line-height: $leading*2;
+}
+
+// Reading width
+.measure {
+  max-width: 34em;
+}
+
+h1 {
+  margin: 0; padding: $leading 0;
+  font-size: 56px;
+  font-weight: $boldweight;
+  line-height: $leading*5;
+
+  @include media(large) {
+    font-size: 60px;
+    font-weight: $boldweight;
+  }
+}
+
+h2 {
+  margin: 0; padding: $leading 0;
+  font-size: 30px;
+  font-weight: $boldweight;
+  line-height: $leading*3;
+
+  @include media(large) {
+  }
+}
+
+h3 {
+  margin: 0; padding: $leading 0;
+  font-size: 23px;
+  font-weight: $boldweight;
+  //line-height: $leading*2;
+  line-height: 30px;
+
+  @include media(large) {
+  }
+}
+
+h4 {
+  margin: 0; padding: $leading 0;
+  font-size: $body;
+  font-weight: $boldweight;
+  line-height: $leading*2;
+}
