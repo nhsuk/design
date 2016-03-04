@@ -3,6 +3,8 @@ $pure-black: #000000;
 $black: #231f20;
 $white: #ffffff;
 
+
+
 /* 
 
 these should be a scale of tint: blue00, blue10...blue70.... 
@@ -32,9 +34,16 @@ $hr-white-30: rgba(white, 0.3);
 // Semantic colour names
 $nhs-blue: $blue;
 
-$page-colour: $white;
+$page-colour: #F7FCFF;
+
+  /*
+    colours to test:
+    very light grey:F7F7F7
+    very light NHS blue: EBF6FF
+  */
+
 $header-bottom-margin: $hr-white-30;
-$text-colour: $black;
+$text-colour: #0b0c0c; //off blacks
 
 $link-colour: $blue;
 $focus-colour: $yellow;

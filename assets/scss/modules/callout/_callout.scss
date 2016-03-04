@@ -1,6 +1,14 @@
 .callout {
-  margin: $leading*2 0;
-  padding: $leading $leading*2;
+   
+  /*
+  box-sizing: border-box;
+  ms-box-sizing: border-box;
+  webkit-box-sizing: border-box;
+  moz-box-sizing: border-box;
+  */
+
+  padding: $leading $leading*2; 
+
 }
 
 .callout.aside {
@@ -13,7 +21,7 @@
 
   @include media(large) {
     float: right;
-    width: 240px;
+    // width: 240px;
     top: -1*$leading*5;
     padding-top: $leading*3;
   }

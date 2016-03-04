@@ -19,8 +19,11 @@ body {
 }
 
 .content {
+  padding-top: $leading*2;
+  padding-bottom: $leading*1;
+
   @include media(large) {
-    padding-top: $leading*3;
-    padding-bottom: $leading*4;
+    padding-top: $leading*4;
+    // padding-bottom: $leading*1;
   }
 }
