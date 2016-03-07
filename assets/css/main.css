@@ -50,7 +50,7 @@ body {
   font-size: 20px;
   line-height: 32px;
 }
-@media (min-width: 500px) {
+@media (min-width: 640px) {
   body {
     font-weight: 400;
   }
@@ -86,7 +86,8 @@ h2, .heading-xlarge {
   margin: 0;
   padding: 16px 0;
   font-weight: 600;
-  line-height: 48px;
+  line-height: 32px;
+  font-size: 24px;
 }
 @media (min-width: 500px) {
   h2, .heading-xlarge {
@@ -258,11 +259,6 @@ body {
   padding-top: 32px;
   padding-bottom: 16px;
 }
-@media (min-width: 980px) {
-  .content {
-    padding-top: 64px;
-  }
-}
 
 .grid-row {
   display: block;
@@ -413,17 +409,16 @@ body {
 #global-header {
   background-color: #0072C6;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  /* $page-colour */
 }
 
 .header-container {
   padding-top: 16px;
   padding-bottom: 16px;
 }
-@media (min-width: 480px) {
+@media (min-width: 500px) {
   .header-container {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 24px;
+    padding-bottom: 16px;
   }
 }
 
@@ -443,26 +438,33 @@ body {
   display: none;
   box-sizing: border-box;
   float: left;
-  height: 48px;
-  width: 338px;
+  height: 16px;
+  width: 300px;
   padding: 0;
   background-color: #ffffff;
   border: 1px solid #00365D;
 }
-@media (min-width: 480px) {
+@media (min-width: 640px) {
   .header-search input {
     display: block;
+    height: 40px;
   }
 }
 .header-search button {
   box-sizing: border-box;
   float: left;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   text-indent: -999em;
   background: url("/images/icon-search.svg") center center no-repeat #00365D;
   background-size: 16px;
   border: 1px solid #00365D;
+}
+@media (min-width: 640px) {
+  .header-search button {
+    display: block;
+    height: 40px;
+  }
 }
 
 html {
@@ -502,7 +504,7 @@ html {
   padding-top: 32px;
   padding-bottom: 16px;
 }
-@media (min-width: 500px) {
+@media (min-width: 640px) {
   .header-local-container {
     padding-top: 64px;
     padding-bottom: 16px;

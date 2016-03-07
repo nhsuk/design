@@ -41,7 +41,7 @@ body {
   font-size: $body;
   line-height: $leading*2;
 
-  @include media(500px) {
+  @include media(640px) {
       font-weight: $bodyweight;
   }
 }
@@ -73,7 +73,8 @@ h1 {
 h2 {
   margin: 0; padding: $leading 0;
   font-weight: $boldweight;
-  line-height: $leading*3;
+  line-height: $leading*2;
+  font-size: 24px;
   
   @include media(500px) {
     font-weight: $boldweight;

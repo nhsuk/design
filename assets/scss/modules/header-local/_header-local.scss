@@ -10,7 +10,7 @@
   padding-top: $leading*2;
   padding-bottom: $leading*1;
 
-  @include media(500px) {
+  @include media(640px) {
     padding-top: $leading*4;
     padding-bottom: $leading*1;
   }
