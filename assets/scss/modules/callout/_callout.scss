@@ -1,14 +1,5 @@
 .callout {
-   
-  /*
-  box-sizing: border-box;
-  ms-box-sizing: border-box;
-  webkit-box-sizing: border-box;
-  moz-box-sizing: border-box;
-  */
-
   padding: $leading $leading*2; 
-
 }
 
 .callout.aside {
@@ -49,4 +40,12 @@
 .callout.gp {
   padding: $leading*2;
   border: 14px solid $light-blue2;
+}
+
+.callout.oneoneone {
+  color: $white;
+}
+
+.callout.oneoneone a{
+  color: $white;
 }

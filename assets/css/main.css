@@ -164,11 +164,11 @@ h6 a {
 }
 
 p {
-  margin: 32px 0 16px 0;
+  margin: 32px 0 32px 0;
 }
 
 ul, ol {
-  margin: 0 0 16px 0;
+  margin: 16px 0 32px 0;
   padding-left: 1em;
   list-style-type: square;
   letter-spacing: 0.01em;
@@ -185,14 +185,9 @@ ul.link-list {
   padding: 0;
 }
 
-ul ul {
-  margin: 16px 0 16px 0;
-  padding-left: 1em;
-  list-style-type: square;
-}
-
 .callout.gp ul {
   margin-bottom: 32px;
+  /* possible dperecated */
 }
 
 a {
@@ -258,7 +253,6 @@ body {
 
 .content {
   padding-top: 32px;
-  padding-bottom: 16px;
 }
 
 .grid-row {
@@ -342,12 +336,6 @@ body {
 }
 
 .callout {
-  /*
-  box-sizing: border-box;
-  ms-box-sizing: border-box;
-  webkit-box-sizing: border-box;
-  moz-box-sizing: border-box;
-  */
   padding: 16px 32px;
 }
 
@@ -389,6 +377,14 @@ body {
 .callout.gp {
   padding: 32px;
   border: 14px solid #66B0E8;
+}
+
+.callout.oneoneone {
+  color: #ffffff;
+}
+
+.callout.oneoneone a {
+  color: #ffffff;
 }
 
 .image-module {
@@ -530,6 +526,10 @@ hr {
   border: 0;
   height: 1px;
   background: #e6e6e6;
+}
+
+.row-blue {
+  background-color: #0091C9;
 }
 
 /*# sourceMappingURL=main.css.map */

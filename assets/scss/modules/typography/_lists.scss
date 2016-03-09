@@ -1,5 +1,5 @@
 ul, ol {
-  margin: 0 0 $leading 0;
+  margin: $leading 0 $leading*2 0;
   padding-left: 1em;
   list-style-type: square;
   letter-spacing: 0.01em;
@@ -16,12 +16,6 @@ ul.link-list {
     padding: 0;
 }
 
-ul ul {
-  margin: $leading 0 $leading 0;
-  padding-left: 1em;
-  list-style-type: square;
-}
-
 .callout.gp ul{
-      margin-bottom: $leading*2;
+      margin-bottom: $leading*2; /* possible dperecated */
 }
