@@ -185,6 +185,12 @@ ul.link-list {
   padding: 0;
 }
 
+.callout ul {
+  list-style-type: none;
+  list-style-position: inside;
+  padding-left: 0em;
+}
+
 .callout.gp ul {
   margin-bottom: 32px;
   /* possible dperecated */
@@ -253,6 +259,10 @@ body {
 
 .content {
   padding-top: 32px;
+}
+
+.float-aside {
+  float: right;
 }
 
 .grid-row {

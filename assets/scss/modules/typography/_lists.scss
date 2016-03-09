@@ -16,6 +16,12 @@ ul.link-list {
     padding: 0;
 }
 
-.callout.gp ul{
+.callout ul {
+   list-style-type: none;
+    list-style-position: inside;
+    padding-left: 0em;
+}
+
+.callout.gp ul {
       margin-bottom: $leading*2; /* possible dperecated */
 }
