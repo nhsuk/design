@@ -57,7 +57,7 @@ h1 {
   font-weight: $lightweight;
   line-height: $leading*3;
 
-  @include media(500px) {
+  @include media(mid) {
     font-size: 50px;
     font-weight: $lightweight;
     line-height: $leading*5;
@@ -76,25 +76,25 @@ h2 {
   line-height: $leading*2;
   font-size: 24px;
   
-  @include media(500px) {
+  @include media(mid) {
     font-weight: $boldweight;
+    font-size: 32px;
+    line-height: $leading*3;
   }
   
   @include media(large) {
-    font-size: 30px;
-    font-weight: $boldweight;
-    line-height: $leading*3;
   }
 }
 
 h3 {
   margin: 0; padding: $leading 0;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: $boldweight;
   //line-height: $leading*2;
   line-height: 30px;
 
   @include media(large) {
+
   }
 }
 

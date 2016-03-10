@@ -82,7 +82,7 @@ h1, .heading-xxlarge {
   }
 }
 
-h2, .heading-xlarge {
+h2, .heading-xlarge, .callout > .heading {
   margin: 0;
   padding: 16px 0;
   font-weight: 600;
@@ -90,14 +90,9 @@ h2, .heading-xlarge {
   font-size: 24px;
 }
 @media (min-width: 500px) {
-  h2, .heading-xlarge {
+  h2, .heading-xlarge, .callout > .heading {
     font-weight: 600;
-  }
-}
-@media (min-width: 980px) {
-  h2, .heading-xlarge {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 32px;
     line-height: 48px;
   }
 }
@@ -105,7 +100,7 @@ h2, .heading-xlarge {
 h3, .heading-large {
   margin: 0;
   padding: 16px 0;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 30px;
 }
@@ -154,6 +149,7 @@ body {
 h1 a, .heading-xxlarge a,
 h2 a,
 .heading-xlarge a,
+.callout > .heading a,
 h3 a,
 .heading-large a,
 h4 a,
@@ -185,17 +181,6 @@ ul.link-list {
   padding: 0;
 }
 
-.callout ul {
-  list-style-type: none;
-  list-style-position: inside;
-  padding-left: 0em;
-}
-
-.callout.gp ul {
-  margin-bottom: 32px;
-  /* possible dperecated */
-}
-
 a {
   color: #0072C6;
   text-decoration: underline;
@@ -204,7 +189,7 @@ a {
 .button {
   box-sizing: border-box;
   display: inline-block;
-  min-width: 280px;
+  min-width: 200px;
   height: 64px;
   line-height: 57.6px;
   /*Do we need a mixin for this  to determine line height based on font height? */
@@ -234,35 +219,6 @@ a {
 .button::-moz-focus-inner {
   border: 0;
   padding: 0;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #F7FCFF;
-}
-
-.header-container, .footer-container, .header-local-container,
-.content {
-  max-width: 960px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-@media (min-width: 980px) {
-  .header-container, .footer-container, .header-local-container,
-  .content {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.content {
-  padding-top: 32px;
-}
-
-.float-aside {
-  float: right;
 }
 
 .grid-row {
@@ -345,6 +301,35 @@ body {
   /*background-color: #eee;*/
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F7FCFF;
+}
+
+.header-container, .footer-container, .header-local-container,
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 980px) {
+  .header-container, .footer-container, .header-local-container,
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.content {
+  padding-top: 32px;
+}
+
+.fright {
+  float: right;
+}
+
 .callout {
   padding: 16px 32px;
 }
@@ -352,27 +337,44 @@ body {
 .callout.aside {
   position: relative;
   z-index: 1;
-  top: -14px;
+  top: 0px;
   max-width: 34em;
   margin-top: 0;
   padding-top: 32px;
 }
+@media (min-width: 500px) {
+  .callout.aside {
+    top: -48px;
+    padding-top: 16px;
+  }
+}
 @media (min-width: 980px) {
   .callout.aside {
-    float: right;
-    top: -80px;
-    padding-top: 48px;
+    top: -64px;
+    padding-top: 16px;
   }
 }
 
-.callout.emergency {
-  background-color: rgba(231, 9, 16, 0.8);
-  font-weight: 400;
-  color: #ffffff;
+.callout ul {
+  list-style-type: none;
+  list-style-position: inside;
+  padding-left: 0em;
 }
 
 .callout li {
   letter-spacing: 0.5px;
+}
+
+/* 999 callout variation */
+.callout.emergency {
+  background-color: rgba(231, 9, 16, 0.8);
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+.callout.emergency > ul {
+  font-size: 20px;
+  font-weight: 200;
 }
 
 .callout.emergency a {
@@ -380,15 +382,24 @@ body {
   text-decoration: underline;
 }
 
+/* Info callout variation */
 .callout.info {
   background-color: rgba(255, 237, 0, 0.2);
 }
 
+/* GP callout variation */
 .callout.gp {
   padding: 32px;
   border: 14px solid #66B0E8;
+  margin-bottom: 32px;
 }
 
+.callout.gp ul {
+  margin-bottom: 32px;
+  /* possible dperecated */
+}
+
+/* 111 callout variation */
 .callout.oneoneone {
   color: #ffffff;
 }
