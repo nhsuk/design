@@ -3,6 +3,8 @@ $pure-black: #000000;
 $black: #231f20;
 $white: #ffffff;
 
+
+
 /* 
 
 these should be a scale of tint: blue00, blue10...blue70.... 
@@ -16,6 +18,7 @@ $dark-blue: #00365D;
 $light-blue: #0988E7; 
 $light-blue2: #66B0E8; 
 $light-blue3: #A8E8FF; /* #70C1FF */
+$blue2: #0091C9;
 
 $yellow: #FFED00;
 $red: #E70910;
@@ -23,18 +26,23 @@ $green: #76BD18;
 $dark-green: #6AAB20;
 
 $grey: #e6e6e6;
-$light-grey: #f2f2f2;
-
-
+$grey-2: rgba(118,134,146,0.2);
+$light-grey:  rgba(66,85,99,.15);
 $hr-white-30: rgba(white, 0.3);
-
 
 // Semantic colour names
 $nhs-blue: $blue;
 
-$page-colour: $white;
+$page-colour: #F7FCFF;
+
+  /*
+    colours to test:
+    very light grey:F7F7F7
+    very light NHS blue: EBF6FF
+  */
+
 $header-bottom-margin: $hr-white-30;
-$text-colour: $black;
+$text-colour: #0b0c0c; //off blacks
 
 $link-colour: $blue;
 $focus-colour: $yellow;

@@ -18,7 +18,13 @@
     @media (min-width: 980px) {
       @content;
     }
-  } @else {
+    
+    } @else if $size == mid {
+    @media (min-width: 500px) {
+      @content
+    }
+
+    } @else {
     @media (min-width: $size) {
       @content
     }

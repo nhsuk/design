@@ -27,8 +27,8 @@
 }
 
 
-$body: 18px;
-$leading: 14px;
+$body: 20px;
+$leading: 16px;
 $family: "FS Me", sans-serif;
 $lightweight: 200;
 $bodyweight: 400;
@@ -40,6 +40,10 @@ body {
   font-weight: $lightweight;
   font-size: $body;
   line-height: $leading*2;
+
+  @include media(640px) {
+      font-weight: $bodyweight;
+  }
 }
 
 // Reading width
@@ -49,34 +53,48 @@ body {
 
 h1 {
   margin: 0; padding: $leading 0;
-  font-size: 56px;
-  font-weight: $boldweight;
-  line-height: $leading*5;
+  font-size: 40px;
+  font-weight: $lightweight;
+  line-height: $leading*3;
+
+  @include media(mid) {
+    font-size: 50px;
+    font-weight: $lightweight;
+    line-height: $leading*5;
+    letter-spacing: -0.02em;
+  }
 
   @include media(large) {
-    font-size: 60px;
-    font-weight: $boldweight;
+    font-weight: $bodyweight;
+    font-size: 64px;
   }
 }
 
 h2 {
   margin: 0; padding: $leading 0;
-  font-size: 30px;
   font-weight: $boldweight;
-  line-height: $leading*3;
-
+  line-height: $leading*2;
+  font-size: 24px;
+  
+  @include media(mid) {
+    font-weight: $boldweight;
+    font-size: 32px;
+    line-height: $leading*3;
+  }
+  
   @include media(large) {
   }
 }
 
 h3 {
   margin: 0; padding: $leading 0;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: $boldweight;
   //line-height: $leading*2;
   line-height: 30px;
 
   @include media(large) {
+
   }
 }
 
@@ -86,3 +104,22 @@ h4 {
   font-weight: $boldweight;
   line-height: $leading*2;
 }
+
+p {
+  letter-spacing: 0.01em;
+}
+
+p.lede {
+  margin: 0;
+  padding: 0 0 $leading*2 0;
+  font-size: $body;
+  letter-spacing: 0.01em;
+  line-height: $leading*2;
+  font-weight: $lightweight;
+  color: $light-blue3;
+
+  @include media(large) {
+    font-size: 24px;
+  }
+}
+

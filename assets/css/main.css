@@ -15,6 +15,11 @@ we can add other blues, named like blue40 (for a lighter blue) or blue60 for a d
 
 */
 /* #70C1FF */
+/*
+  colours to test:
+  very light grey:F7F7F7
+  very light NHS blue: EBF6FF
+*/
 @font-face {
   font-family: 'FS Me';
   src: url("/fonts/FSMeWeb-Light.woff");
@@ -42,8 +47,13 @@ we can add other blues, named like blue40 (for a lighter blue) or blue60 for a d
 body {
   font-family: "FS Me", sans-serif;
   font-weight: 200;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 20px;
+  line-height: 32px;
+}
+@media (min-width: 640px) {
+  body {
+    font-weight: 400;
+  }
 }
 
 .measure {
@@ -52,44 +62,78 @@ body {
 
 h1, .heading-xxlarge {
   margin: 0;
-  padding: 14px 0;
-  font-size: 56px;
-  font-weight: 600;
-  line-height: 70px;
+  padding: 16px 0;
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 48px;
+}
+@media (min-width: 500px) {
+  h1, .heading-xxlarge {
+    font-size: 50px;
+    font-weight: 200;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+  }
 }
 @media (min-width: 980px) {
   h1, .heading-xxlarge {
-    font-size: 60px;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 64px;
   }
 }
 
-h2, .heading-xlarge {
+h2, .heading-xlarge, .callout > .heading {
   margin: 0;
-  padding: 14px 0;
-  font-size: 30px;
+  padding: 16px 0;
   font-weight: 600;
-  line-height: 42px;
+  line-height: 32px;
+  font-size: 24px;
+}
+@media (min-width: 500px) {
+  h2, .heading-xlarge, .callout > .heading {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+  }
 }
 
 h3, .heading-large {
   margin: 0;
-  padding: 14px 0;
-  font-size: 23px;
+  padding: 16px 0;
+  font-size: 22px;
   font-weight: 600;
   line-height: 30px;
 }
 
 h4, .heading-body {
   margin: 0;
-  padding: 14px 0;
-  font-size: 18px;
+  padding: 16px 0;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 28px;
+  line-height: 32px;
+}
+
+p {
+  letter-spacing: 0.01em;
+}
+
+p.lede {
+  margin: 0;
+  padding: 0 0 32px 0;
+  font-size: 20px;
+  letter-spacing: 0.01em;
+  line-height: 32px;
+  font-weight: 200;
+  color: #A8E8FF;
+}
+@media (min-width: 980px) {
+  p.lede {
+    font-size: 24px;
+  }
 }
 
 body {
-  color: #231f20;
+  color: #0b0c0c;
 }
 
 .baseline {
@@ -98,13 +142,14 @@ body {
   background-image: -o-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-image: linear-gradient(to bottom, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-repeat: repeat-y;
-  background-size: 100% 14px;
+  background-size: 100% 16px;
 }
 
 /* remove undelines for a tags used as anchors */
 h1 a, .heading-xxlarge a,
 h2 a,
 .heading-xlarge a,
+.callout > .heading a,
 h3 a,
 .heading-large a,
 h4 a,
@@ -115,33 +160,25 @@ h6 a {
 }
 
 p {
-  margin: 28px 0 28px 0;
+  margin: 32px 0 32px 0;
 }
 
 ul, ol {
-  margin: 0 0 14px 0;
+  margin: 16px 0 32px 0;
   padding-left: 1em;
   list-style-type: square;
+  letter-spacing: 0.01em;
+  list-style-position: inside;
 }
 
 li {
-  margin: 0 0 14px 0;
+  margin: 0 0 16px 0;
   padding-left: 0;
 }
 
 ul.link-list {
   list-style-type: none;
   padding: 0;
-}
-
-ul ul {
-  margin: 14px 0 14px 0;
-  padding-left: 1em;
-  list-style-type: square;
-}
-
-.callout.gp ul {
-  margin-bottom: 28px;
 }
 
 a {
@@ -152,11 +189,11 @@ a {
 .button {
   box-sizing: border-box;
   display: inline-block;
-  min-width: 280px;
-  height: 56px;
-  line-height: 50.4px;
+  min-width: 200px;
+  height: 64px;
+  line-height: 57.6px;
   /*Do we need a mixin for this  to determine line height based on font height? */
-  padding: 0 14px;
+  padding: 0 16px;
   border: 0;
   text-align: center;
   color: #ffffff;
@@ -184,34 +221,6 @@ a {
   padding: 0;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-}
-
-.header-container, .footer-container, .header-local-container,
-.content {
-  max-width: 960px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-@media (min-width: 980px) {
-  .header-container, .footer-container, .header-local-container,
-  .content {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media (min-width: 980px) {
-  .content {
-    padding-top: 42px;
-    padding-bottom: 56px;
-  }
-}
-
 .grid-row {
   display: block;
   margin-left: -1.7%;
@@ -229,13 +238,23 @@ body {
 }
 
 .grid-1-3 {
-  width: 29.9%;
-  float: left;
+  width: 96.6%;
+}
+@media (min-width: 640px) {
+  .grid-1-3 {
+    width: 29.9%;
+    float: left;
+  }
 }
 
 .grid-2-3 {
-  width: 63.2666%;
-  float: left;
+  width: 96.6%;
+}
+@media (min-width: 640px) {
+  .grid-2-3 {
+    width: 63.2666%;
+    float: left;
+  }
 }
 
 .grid-1-4 {
@@ -279,39 +298,83 @@ body {
 }
 
 .grid-row [class*='grid-'] {
-  background-color: #eee;
+  /*background-color: #eee;*/
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F7FCFF;
+}
+
+.header-container, .footer-container, .header-local-container,
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 980px) {
+  .header-container, .footer-container, .header-local-container,
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.content {
+  padding-top: 32px;
+}
+
+.fright {
+  float: right;
 }
 
 .callout {
-  margin: 28px 0;
-  padding: 14px 28px;
+  padding: 16px 32px;
 }
 
 .callout.aside {
   position: relative;
   z-index: 1;
-  top: -14px;
+  top: 0px;
   max-width: 34em;
   margin-top: 0;
-  padding-top: 28px;
+  padding-top: 32px;
+}
+@media (min-width: 500px) {
+  .callout.aside {
+    top: -48px;
+    padding-top: 16px;
+  }
 }
 @media (min-width: 980px) {
   .callout.aside {
-    float: right;
-    width: 240px;
-    top: -70px;
-    padding-top: 42px;
+    top: -64px;
+    padding-top: 16px;
   }
 }
 
-.callout.emergency {
-  background-color: rgba(231, 9, 16, 0.8);
-  font-weight: 400;
-  color: #ffffff;
+.callout ul {
+  list-style-type: none;
+  list-style-position: inside;
+  padding-left: 0em;
 }
 
 .callout li {
   letter-spacing: 0.5px;
+}
+
+/* 999 callout variation */
+.callout.emergency {
+  background-color: rgba(231, 9, 16, 0.8);
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+.callout.emergency > ul {
+  font-size: 20px;
+  font-weight: 200;
 }
 
 .callout.emergency a {
@@ -319,18 +382,35 @@ body {
   text-decoration: underline;
 }
 
+/* Info callout variation */
 .callout.info {
   background-color: rgba(255, 237, 0, 0.2);
 }
 
+/* GP callout variation */
 .callout.gp {
-  padding: 28px;
+  padding: 32px;
   border: 14px solid #66B0E8;
+  margin-bottom: 32px;
+}
+
+.callout.gp ul {
+  margin-bottom: 32px;
+  /* possible dperecated */
+}
+
+/* 111 callout variation */
+.callout.oneoneone {
+  color: #ffffff;
+}
+
+.callout.oneoneone a {
+  color: #ffffff;
 }
 
 .image-module {
-  margin: 0 0 28px 0;
-  min-height: 252px;
+  margin: 0 0 32px 0;
+  min-height: 288px;
 }
 
 .image-module img {
@@ -347,17 +427,16 @@ body {
 #global-header {
   background-color: #0072C6;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  /* $page-colour */
 }
 
 .header-container {
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
-@media (min-width: 480px) {
+@media (min-width: 500px) {
   .header-container {
-    padding-top: 28px;
-    padding-bottom: 28px;
+    padding-top: 24px;
+    padding-bottom: 16px;
   }
 }
 
@@ -377,40 +456,47 @@ body {
   display: none;
   box-sizing: border-box;
   float: left;
-  height: 42px;
-  width: 338px;
+  height: 16px;
+  width: 300px;
   padding: 0;
   background-color: #ffffff;
   border: 1px solid #00365D;
 }
-@media (min-width: 480px) {
+@media (min-width: 640px) {
   .header-search input {
     display: block;
+    height: 40px;
   }
 }
 .header-search button {
   box-sizing: border-box;
   float: left;
-  height: 42px;
-  width: 42px;
+  height: 32px;
+  width: 32px;
   text-indent: -999em;
   background: url("/images/icon-search.svg") center center no-repeat #00365D;
   background-size: 16px;
   border: 1px solid #00365D;
 }
+@media (min-width: 640px) {
+  .header-search button {
+    display: block;
+    height: 40px;
+  }
+}
 
 html {
-  background-color: #f2f2f2;
+  background-color: rgba(66, 85, 99, 0.15);
 }
 
 #global-footer {
-  border-top: 1px solid #e6e6e6;
-  background-color: #f2f2f2;
+  border-top: 1px solid rgba(118, 134, 146, 0.2);
+  background-color: rgba(66, 85, 99, 0.15);
 }
 
 .footer-container {
-  padding-top: 42px;
-  padding-bottom: 84px;
+  padding-top: 48px;
+  padding-bottom: 96px;
 }
 .footer-container nav ul {
   list-style: none;
@@ -433,13 +519,19 @@ html {
 }
 
 .header-local-container {
-  padding-top: 84px;
-  padding-bottom: 42px;
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+@media (min-width: 640px) {
+  .header-local-container {
+    padding-top: 64px;
+    padding-bottom: 16px;
+  }
 }
 @media (min-width: 980px) {
   .header-local-container {
-    padding-top: 112px;
-    padding-bottom: 42px;
+    padding-top: 128px;
+    padding-bottom: 32px;
   }
 }
 
@@ -455,6 +547,10 @@ hr {
   border: 0;
   height: 1px;
   background: #e6e6e6;
+}
+
+.row-blue {
+  background-color: #0091C9;
 }
 
 /*# sourceMappingURL=main.css.map */

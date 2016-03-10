@@ -19,8 +19,9 @@ body {
 }
 
 .content {
-  @include media(large) {
-    padding-top: $leading*3;
-    padding-bottom: $leading*4;
-  }
+  padding-top: $leading*2;
+}
+
+.fright{
+  float: right;
 }
