@@ -326,7 +326,7 @@ body {
   padding-top: 32px;
 }
 
-.fright {
+.f-right {
   float: right;
 }
 
@@ -372,9 +372,10 @@ body {
   color: #ffffff;
   margin-bottom: 32px;
 }
-.callout.emergency > ul {
-  font-size: 20px;
+.callout.emergency > ul, .callout.emergency p {
+  font-size: 18px;
   font-weight: 200;
+  line-height: 24px;
 }
 
 .callout.emergency a {
