@@ -71,7 +71,7 @@ h1, .heading-xxlarge {
   h1, .heading-xxlarge {
     font-size: 50px;
     font-weight: 200;
-    line-height: 80px;
+    line-height: 64px;
     letter-spacing: -0.02em;
   }
 }

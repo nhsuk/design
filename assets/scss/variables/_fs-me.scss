@@ -60,7 +60,7 @@ h1 {
   @include media(mid) {
     font-size: 50px;
     font-weight: $lightweight;
-    line-height: $leading*5;
+    line-height: $leading*4;
     letter-spacing: -0.02em;
   }
 
