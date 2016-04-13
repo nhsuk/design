@@ -45,9 +45,10 @@
   color: $white;
   margin-bottom: $leading*2;
 
-  > ul {
-    font-size: $body;
+  > ul, p {
+    font-size: $callout;
     font-weight: $lightweight;
+    line-height: $leading*1.5;
   }
 
 
