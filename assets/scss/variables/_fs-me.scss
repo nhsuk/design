@@ -26,6 +26,7 @@
   font-style: bold;
 }
 
+$feedback: 16px;
 $callout: 18px;
 $body: 20px;
 $leading: 16px;
@@ -123,3 +124,12 @@ p.lede {
   }
 }
 
+/*-- Feedback bar -- */
+
+.feedback-container p { 
+  padding: 0px;
+  margin:  $leading 0 $leading 0;
+  line-height: 0px;
+  font-size: $feedback;
+  color: #333333;
+}
