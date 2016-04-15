@@ -5,7 +5,10 @@
 //@import "variables/lato"; // hot swappable type
 //@import "variables/frutiger";
 //@import "variables/new-rail";
+
 @import "variables/fs-me";
+
+
 
 @import "modules/typography/base";
 @import "modules/typography/headings";
@@ -26,6 +29,9 @@
 @import "modules/header-global/header-global";
 @import "modules/footer-global/footer-global";
 @import "modules/header-local/header-local";
+
+//feedback bar
+@import "modules/feedback-bar/feedback-bar";
 
 // Decorative elements
 @import "modules/display/_decorative-elements";
