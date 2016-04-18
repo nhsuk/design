@@ -1,4 +1,12 @@
 a {
-  color: $link-colour;
-  text-decoration: underline;
+    color: $link-colour;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: $hover-link-colour;
+}
+
+a:visited {
+    color: $visited-link-colour;
 }
