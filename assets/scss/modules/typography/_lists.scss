@@ -1,17 +1,17 @@
 ul, ol {
   margin: $leading 0 $leading*2 0;
-  padding-left: 1em;
-  list-style-type: square;
+  padding-left: 0px;
+  list-style-type: none;
   letter-spacing: 0.01em;
   list-style-position: inside;
 }
 
 li {
     margin:  0 0 $leading 0;
-    padding-left: 0;
+    padding-left: 0px;
 }
 
 ul.link-list {
     list-style-type: none;
-    padding: 0;
+    padding: 0px;
 }
