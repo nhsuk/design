@@ -1,3 +1,8 @@
+img {
+  display: block;
+  max-width: 100%;
+}
+
 .image-module {
   margin: 0 0 $leading*2 0;
   min-height: $leading*18 ;
@@ -11,9 +16,34 @@
 
 .image-description {
   @include media(large) {
-    overflow: auto; 
+    overflow: auto;
     }
 }
 
+.condition-images {
+  @extend %contain-floats;
+  margin: $leading*2 0 $leading 0;
 
+  @include media(707px) {
+    text-align: left;
+  }
 
+  figure {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin: 0 auto $leading auto;
+
+    @include media(707px) {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 $leading $leading 0;
+    }
+  }
+
+  figcaption {
+    padding: $leading/2 $leading/2 $leading $leading/2;
+    background-color: tint($blue, 80%);
+  }
+}
