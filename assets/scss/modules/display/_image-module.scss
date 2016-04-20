@@ -22,7 +22,7 @@ img {
 
 .condition-images {
   @extend %contain-floats;
-  margin: 36px 0 20px 0;
+  margin: $leading*2 0 $leading 0;
 
   @include media(707px) {
     text-align: left;
@@ -33,17 +33,17 @@ img {
     width: 100%;
     max-width: 300px;
     box-sizing: border-box;
-    margin: 0 auto 18px auto;
+    margin: 0 auto $leading auto;
 
     @include media(707px) {
       display: inline-block;
       vertical-align: top;
-      margin: 0 18px 18px 0;
+      margin: 0 $leading $leading 0;
     }
   }
 
   figcaption {
-    padding: 6px 6px 12px 6px;
-    background-color: tint($blue, 95%);
+    padding: $leading/2 $leading/2 $leading $leading/2;
+    background-color: tint($blue, 80%);
   }
 }

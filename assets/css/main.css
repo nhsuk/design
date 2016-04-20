@@ -431,7 +431,7 @@ img {
 }
 
 .condition-images {
-  margin: 36px 0 20px 0;
+  margin: 32px 0 16px 0;
 }
 @media (min-width: 707px) {
   .condition-images {
@@ -443,18 +443,18 @@ img {
   width: 100%;
   max-width: 300px;
   box-sizing: border-box;
-  margin: 0 auto 18px auto;
+  margin: 0 auto 16px auto;
 }
 @media (min-width: 707px) {
   .condition-images figure {
     display: inline-block;
     vertical-align: top;
-    margin: 0 18px 18px 0;
+    margin: 0 16px 16px 0;
   }
 }
 .condition-images figcaption {
-  padding: 6px 6px 12px 6px;
-  background-color: tint(#0072C6, 95%);
+  padding: 8px 8px 16px 8px;
+  background-color: #cce3f4;
 }
 
 #global-header {
