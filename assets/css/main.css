@@ -176,13 +176,13 @@ p.lede {
   padding: 0;
 }
 
-nav.condition-navigation > .nav-list {
+.condition-navigation > .nav-list {
   font-size: 16px;
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
 }
-nav.condition-navigation > .nav-list > .nav-item {
+.condition-navigation > .nav-list > .nav-item {
   margin: 0px;
   padding-left: 0;
 }
@@ -621,20 +621,20 @@ p {
 
 ul, ol {
   margin: 16px 0 32px 0;
-  padding-left: 0px;
-  list-style-type: none;
+  padding-left: 1em;
+  list-style-type: disc;
   letter-spacing: 0.01em;
   list-style-position: inside;
 }
 
 li {
   margin: 0 0 16px 0;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 ul.link-list {
   list-style-type: none;
-  padding: 0px;
+  padding: 0;
 }
 
 a {
