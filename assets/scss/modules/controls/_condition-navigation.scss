@@ -1,0 +1,17 @@
+.condition-navigation {
+
+  > .nav-list {
+    font-size: 16px;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+
+    > .nav-item {
+      margin:  0px;
+      padding-left: 0;
+    }
+
+  }
+
+}
+

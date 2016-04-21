@@ -132,58 +132,13 @@ p.lede {
   }
 }
 
-body {
-  color: #0b0c0c;
-}
-
-.baseline {
-  background-image: -webkit-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
-  background-image: -moz-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
-  background-image: -o-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
-  background-image: linear-gradient(to bottom, cyan 0, rgba(255, 255, 255, 0) 1px);
-  background-repeat: repeat-y;
-  background-size: 100% 16px;
-}
-
-/* remove undelines for a tags used as anchors */
-h1 a, .heading-xxlarge a,
-h2 a,
-.heading-xlarge a,
-.callout > .heading a,
-h3 a,
-.heading-large a,
-h4 a,
-.heading-body a,
-h5 a,
-h6 a {
-  text-decoration: none;
-}
-
-p {
-  margin: 32px 0 32px 0;
-}
-
-ul, ol {
-  margin: 16px 0 32px 0;
-  padding-left: 1em;
-  list-style-type: square;
-  letter-spacing: 0.01em;
-  list-style-position: inside;
-}
-
-li {
-  margin: 0 0 16px 0;
-  padding-left: 0;
-}
-
-ul.link-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-a {
-  color: #0072C6;
-  text-decoration: underline;
+/*-- Feedback bar -- */
+.feedback-container p {
+  padding: 0px;
+  margin: 16px 0 16px 0;
+  line-height: 0px;
+  font-size: 16px;
+  color: #333333;
 }
 
 .button {
@@ -219,6 +174,35 @@ a {
 .button::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+.condition-navigation > .nav-list {
+  font-size: 16px;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  columns: 2;
+}
+.condition-navigation > .nav-list > .nav-item {
+  margin: 0px;
+  padding-left: 0;
+}
+
+.pagination-container {
+  border-top: 1px solid rgba(66, 85, 99, 0.15);
+  padding: 32px 0 32px 0;
+}
+
+.article-pagination.-next {
+  text-align: right;
+}
+.article-pagination > a {
+  text-decoration: none;
+}
+.article-pagination > a .prefix {
+  font-size: 16px;
+}
+.article-pagination > a .title {
+  text-decoration: underline;
 }
 
 .grid-row {
@@ -307,7 +291,7 @@ body {
   background-color: #F7FCFF;
 }
 
-.header-container, .footer-container, .header-local-container,
+.header-container, .footer-container, .header-local-container, .feedback-container,
 .content {
   max-width: 960px;
   margin: 0 auto;
@@ -315,7 +299,7 @@ body {
   padding-right: 20px;
 }
 @media (min-width: 980px) {
-  .header-container, .footer-container, .header-local-container,
+  .header-container, .footer-container, .header-local-container, .feedback-container,
   .content {
     padding-left: 0;
     padding-right: 0;
@@ -407,6 +391,15 @@ body {
 
 .callout.oneoneone a {
   color: #ffffff;
+}
+
+/* inline callout  */
+.callout.notice {
+  background-color: rgba(255, 184, 28, 0.8);
+}
+
+.callout.notice p {
+  margin: 0px;
 }
 
 img {
@@ -572,6 +565,15 @@ html {
   color: #ffffff;
 }
 
+#feedback-bar {
+  background-color: #FFB81C;
+}
+
+.feedback-container {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
 .hr {
   border: 1px solid red;
 }
@@ -584,6 +586,68 @@ hr {
 
 .row-blue {
   background-color: #0091C9;
+}
+
+body {
+  color: #0b0c0c;
+}
+
+.baseline {
+  background-image: -webkit-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
+  background-image: -moz-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
+  background-image: -o-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
+  background-image: linear-gradient(to bottom, cyan 0, rgba(255, 255, 255, 0) 1px);
+  background-repeat: repeat-y;
+  background-size: 100% 16px;
+}
+
+/* remove undelines for a tags used as anchors */
+h1 a, .heading-xxlarge a,
+h2 a,
+.heading-xlarge a,
+.callout > .heading a,
+h3 a,
+.heading-large a,
+h4 a,
+.heading-body a,
+h5 a,
+h6 a {
+  text-decoration: none;
+}
+
+p {
+  margin: 32px 0 32px 0;
+}
+
+ul, ol {
+  margin: 16px 0 32px 0;
+  padding-left: 1em;
+  list-style-type: disc;
+  letter-spacing: 0.01em;
+  list-style-position: inside;
+}
+
+li {
+  margin: 0 0 16px 0;
+  padding-left: 0;
+}
+
+ul.link-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #0072C6;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #66B0E8;
+}
+
+a:visited {
+  color: #4c2c92;
 }
 
 /*# sourceMappingURL=main.css.map */

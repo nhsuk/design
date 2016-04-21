@@ -86,3 +86,15 @@
 .callout.oneoneone a{
   color: $white;
 }
+
+/* inline callout  */
+
+.callout.notice
+{
+  background-color: rgba($yellow2, 0.8);
+}
+
+.callout.notice p
+{
+  margin:0px;
+}

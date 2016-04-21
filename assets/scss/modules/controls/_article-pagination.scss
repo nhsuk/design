@@ -1,0 +1,32 @@
+.pagination-container
+{
+  border-top: 1px solid $light-grey;
+  padding: $leading*2 0 $leading*2 0;
+}
+
+.article-pagination {
+
+  //put some shit in here that applies to the whole compnent
+
+  &.-next{
+    text-align: right;
+  }
+
+  &.-previous{
+  }
+
+  > a {
+    text-decoration: none;
+  }
+
+  > a .prefix {
+    font-size: 16px;
+  }
+
+  > a .title {
+    text-decoration: underline;
+  }
+
+}
+
+

@@ -3,8 +3,6 @@ $pure-black: #000000;
 $black: #231f20;
 $white: #ffffff;
 
-
-
 /* 
 
 these should be a scale of tint: blue00, blue10...blue70.... 
@@ -21,6 +19,8 @@ $light-blue3: #A8E8FF; /* #70C1FF */
 $blue2: #0091C9;
 
 $yellow: #FFED00;
+$yellow2: #FFB81C;
+
 $red: #E70910;
 $green: #76BD18;
 $dark-green: #6AAB20;
@@ -45,4 +45,7 @@ $header-bottom-margin: $hr-white-30;
 $text-colour: #0b0c0c; //off blacks
 
 $link-colour: $blue;
+$hover-link-colour: $light-blue2;
+$visited-link-colour: #4c2c92;
+
 $focus-colour: $yellow;

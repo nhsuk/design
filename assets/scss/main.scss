@@ -2,24 +2,25 @@
 @import "tools/media-queries";
 @import "tools/tints";
 
+//colours
 @import "variables/colours";
-//@import "variables/lato"; // hot swappable type
+
+//Typeface import [hot swappable type!]
+@import "variables/fs-me";
+//@import "variables/lato"; 
 //@import "variables/frutiger";
 //@import "variables/new-rail";
-@import "variables/fs-me";
 
-@import "modules/typography/base";
-@import "modules/typography/headings";
-@import "modules/typography/paragraphs";
-@import "modules/typography/lists";
-@import "modules/typography/links";
-
-
+// controls
 @import "modules/controls/buttons";
+@import "modules/controls/condition-navigation";
+@import "modules/controls/article-pagination";
 
+//layout
 @import "modules/layout/grid";
 @import "modules/layout/layout";
 
+//Display
 @import "modules/callout/callout";
 @import "modules/display/image-module";
 
@@ -28,6 +29,17 @@
 @import "modules/footer-global/footer-global";
 @import "modules/header-local/header-local";
 
+//feedback bar
+@import "modules/feedback-bar/feedback-bar";
+
 // Decorative elements
 @import "modules/display/_decorative-elements";
 @import "modules/display/_rows";
+
+//Typopgraphy
+@import "modules/typography/base";
+@import "modules/typography/headings";
+@import "modules/typography/paragraphs";
+@import "modules/typography/lists";
+@import "modules/typography/links";
+
