@@ -228,8 +228,13 @@ p.lede {
 }
 
 .grid-1-2 {
-  width: 46.6%;
-  float: left;
+  width: 96.6%;
+}
+@media (min-width: 640px) {
+  .grid-1-2 {
+    width: 46.6%;
+    float: left;
+  }
 }
 
 .grid-1-3 {
@@ -273,8 +278,13 @@ p.lede {
 }
 
 .grid-5-12 {
-  width: 38.2665%;
-  float: left;
+  width: 96.6%;
+}
+@media (min-width: 640px) {
+  .grid-5-12 {
+    width: 38.2665%;
+    float: left;
+  }
 }
 
 .grid-7-12 {
@@ -597,7 +607,8 @@ html {
 }
 
 .feedback-form-container {
-  padding: 32px 0;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .hr {
