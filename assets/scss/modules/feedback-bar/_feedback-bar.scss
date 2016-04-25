@@ -9,5 +9,6 @@
 
 .feedback-form-container {
   @extend %block;
-  padding: $leading*2 0;
+  padding-top: $leading*2;
+  padding-bottom: $leading*2;
 }
