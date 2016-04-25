@@ -7,7 +7,7 @@
 
 //Typeface import [hot swappable type!]
 @import "variables/fs-me";
-//@import "variables/lato"; 
+//@import "variables/lato";
 //@import "variables/frutiger";
 //@import "variables/new-rail";
 
@@ -43,3 +43,7 @@
 @import "modules/typography/lists";
 @import "modules/typography/links";
 
+// Forms
+@import "modules/forms/label";
+@import "modules/forms/input";
+@import "modules/forms/textarea";

@@ -29,6 +29,7 @@
 $feedback: 16px;
 $callout: 18px;
 $body: 20px;
+$smallprint: 14px;
 $leading: 16px;
 $family: "FS Me", sans-serif;
 $lightweight: 200;
@@ -76,13 +77,13 @@ h2 {
   font-weight: $boldweight;
   line-height: $leading*2;
   font-size: 24px;
-  
+
   @include media(mid) {
     font-weight: $boldweight;
     font-size: 32px;
     line-height: $leading*3;
   }
-  
+
   @include media(large) {
   }
 }
@@ -124,12 +125,7 @@ p.lede {
   }
 }
 
-/*-- Feedback bar -- */
-
-.feedback-container p { 
-  padding: 0px;
-  margin:  $leading 0 $leading 0;
-  line-height: 0px;
-  font-size: $feedback;
-  color: #333333;
+.smallprint {
+  font-size: $smallprint;
+  color: $smallprint-grey;
 }

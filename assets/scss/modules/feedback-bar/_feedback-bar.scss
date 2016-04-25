@@ -1,10 +1,13 @@
-#feedback-bar {
+.feedback-strip {
   background-color: $yellow2;
 }
-
-.feedback-container {
+.feedback-strip-container {
   @extend %block;
   padding-top: $leading/8;
   padding-bottom: $leading/8;
 }
 
+.feedback-form-container {
+  @extend %block;
+  padding: $leading*2 0;
+}

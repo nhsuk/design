@@ -3,10 +3,10 @@ $pure-black: #000000;
 $black: #231f20;
 $white: #ffffff;
 
-/* 
+/*
 
-these should be a scale of tint: blue00, blue10...blue70.... 
-i.e. NHS is blue50 as thats a median point, and if we add dark or light tints, 
+these should be a scale of tint: blue00, blue10...blue70....
+i.e. NHS is blue50 as thats a median point, and if we add dark or light tints,
 we can add other blues, named like blue40 (for a lighter blue) or blue60 for a darker blue.
 
 */
@@ -14,8 +14,8 @@ we can add other blues, named like blue40 (for a lighter blue) or blue60 for a d
 $blue: #0072C6;
 $dark-blue: #00365D;
 $dark-blue2: #006BBD;
-$light-blue:  #1D86D1; /*#0988E7;*/
-$light-blue2: #66B0E8; 
+$light-blue: #1D86D1; /*#0988E7;*/
+$light-blue2: #66B0E8;
 $light-blue3: #A8E8FF; /* #70C1FF */
 $blue2: #0091C9;
 
@@ -25,11 +25,14 @@ $yellow2: #FFB81C;
 $red: #E70910;
 $green: #76BD18;
 $dark-green: #6AAB20;
+$feedback-button-green: #417505;
 
 $grey: #e6e6e6;
 $grey-2: rgba(118,134,146,0.2);
 $light-grey:  rgba(66,85,99,.15);
 $hr-white-30: rgba(white, 0.3);
+$opt-out-button-grey: #999999;
+$smallprint-grey: #666666;
 
 // Semantic colour names
 $nhs-blue: $blue;

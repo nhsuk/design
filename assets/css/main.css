@@ -7,10 +7,10 @@
   clear: both;
 }
 
-/* 
+/*
 
-these should be a scale of tint: blue00, blue10...blue70.... 
-i.e. NHS is blue50 as thats a median point, and if we add dark or light tints, 
+these should be a scale of tint: blue00, blue10...blue70....
+i.e. NHS is blue50 as thats a median point, and if we add dark or light tints,
 we can add other blues, named like blue40 (for a lighter blue) or blue60 for a darker blue.
 
 */
@@ -134,32 +134,27 @@ p.lede {
   }
 }
 
-/*-- Feedback bar -- */
-.feedback-container p {
-  padding: 0px;
-  margin: 16px 0 16px 0;
-  line-height: 0px;
-  font-size: 16px;
-  color: #333333;
+.smallprint {
+  font-size: 14px;
+  color: #666666;
 }
 
 .button {
   box-sizing: border-box;
   display: inline-block;
-  min-width: 200px;
-  height: 64px;
-  line-height: 57.6px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: inherit;
+  line-height: 48px;
   /*Do we need a mixin for this  to determine line height based on font height? */
-  padding: 0 16px;
-  border: 0;
+  padding: 0 32px;
+  margin-right: 32px;
   text-align: center;
   color: #ffffff;
   background-color: #76BD18;
   cursor: pointer;
   border: 2px solid #6AAB20;
-  border-radius: 2;
   -webkit-appearance: none;
-  font-weight: 400;
   letter-spacing: 1.000px;
 }
 .button:link, .button:hover, .button:focus, .button:visited {
@@ -176,6 +171,20 @@ p.lede {
 .button::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+.button.-cancel {
+  background-color: #E70910;
+  border-color: #E70910;
+}
+.button.-submit-feedback {
+  background-color: #417505;
+  border-color: #417505;
+}
+.button.-opt-out {
+  color: #000000;
+  background-color: #999999;
+  border-color: #999999;
 }
 
 .condition-navigation > .nav-list {
@@ -293,7 +302,7 @@ body {
   background-color: #F7FCFF;
 }
 
-.header-container, .footer-container, .header-local-container, .feedback-container,
+.header-container, .footer-container, .header-local-container, .feedback-strip-container, .feedback-form-container,
 .content {
   max-width: 960px;
   margin: 0 auto;
@@ -301,7 +310,7 @@ body {
   padding-right: 20px;
 }
 @media (min-width: 980px) {
-  .header-container, .footer-container, .header-local-container, .feedback-container,
+  .header-container, .footer-container, .header-local-container, .feedback-strip-container, .feedback-form-container,
   .content {
     padding-left: 0;
     padding-right: 0;
@@ -480,18 +489,19 @@ img {
   display: block;
   float: right;
 }
-.header-search input {
+.header-search input[type='text'] {
   display: none;
   box-sizing: border-box;
   float: left;
   height: 16px;
   width: 300px;
   padding: 0;
+  margin: 0;
   background-color: #ffffff;
   border: 1px solid #00365D;
 }
 @media (min-width: 640px) {
-  .header-search input {
+  .header-search input[type='text'] {
     display: block;
     height: 40px;
   }
@@ -501,6 +511,7 @@ img {
   float: left;
   height: 32px;
   width: 32px;
+  margin: 0;
   text-indent: -999em;
   background: url("/images/icon-search.svg") center center no-repeat #00365D;
   background-size: 16px;
@@ -576,13 +587,17 @@ html {
   list-style-type: decimal;
 }
 
-#feedback-bar {
+.feedback-strip {
   background-color: #FFB81C;
 }
 
-.feedback-container {
+.feedback-strip-container {
   padding-top: 2px;
   padding-bottom: 2px;
+}
+
+.feedback-form-container {
+  padding: 32px 0;
 }
 
 .hr {
@@ -659,6 +674,54 @@ a:hover {
 
 a:visited {
   color: #4c2c92;
+}
+
+label {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: inherit;
+}
+label:focus {
+  outline: 2px solid #FFED00;
+}
+
+input[type='text'] {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 16px 0 32px 0;
+  padding: 0 4px;
+  border: 2px solid #e6e6e6;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 48px;
+}
+input[type='text']:focus {
+  outline: 2px solid #FFED00;
+}
+
+textarea {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 16px 0 32px 0;
+  padding: 0 4px;
+  border: 2px solid #e6e6e6;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+}
+textarea:focus {
+  outline: 2px solid #FFED00;
 }
 
 /*# sourceMappingURL=main.css.map */
