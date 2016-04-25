@@ -1,6 +1,6 @@
 #local-header {
   color: $white;
-  background-color: $light-blue;
+  background-color: $dark-blue2; /* $light-blue;*/
 }
 
 .header-local-container {
@@ -23,4 +23,16 @@
 
 .header-local-container a {
   color: $white;
+}
+
+.header-local-container a:visited {
+  color: $visited-link-colour-on-blue;
+}
+
+.condition-navigation {
+
+  > .nav-list {
+    list-style-type: decimal;
+  }
+
 }
