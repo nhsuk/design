@@ -565,6 +565,14 @@ html {
   color: #ffffff;
 }
 
+.header-local-container a:visited {
+  color: #0AC0FC;
+}
+
+.condition-navigation > .nav-list {
+  list-style-type: decimal;
+}
+
 #feedback-bar {
   background-color: #FFB81C;
 }
