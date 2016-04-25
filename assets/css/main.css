@@ -63,8 +63,7 @@ body {
 }
 
 h1, .heading-xxlarge {
-  margin: 0;
-  padding: 16px 0;
+  margin: 16px 0;
   font-size: 40px;
   font-weight: 200;
   line-height: 48px;
@@ -85,8 +84,7 @@ h1, .heading-xxlarge {
 }
 
 h2, .heading-xlarge, .callout > .heading {
-  margin: 0;
-  padding: 16px 0;
+  margin: 16px 0;
   font-weight: 600;
   line-height: 32px;
   font-size: 24px;
@@ -100,16 +98,14 @@ h2, .heading-xlarge, .callout > .heading {
 }
 
 h3, .heading-large {
-  margin: 0;
-  padding: 16px 0;
+  margin: 16px 0;
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
 }
 
 h4, .heading-body {
-  margin: 0;
-  padding: 16px 0;
+  margin: 16px 0;
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
@@ -120,8 +116,7 @@ p {
 }
 
 p.lede {
-  margin: 0;
-  padding: 0 0 32px 0;
+  margin: 0 0 32px 0;
   font-size: 20px;
   letter-spacing: 0.01em;
   line-height: 32px;

@@ -54,7 +54,7 @@ body {
 }
 
 h1 {
-  margin: 0; padding: $leading 0;
+  margin: $leading 0;
   font-size: 40px;
   font-weight: $lightweight;
   line-height: $leading*3;
@@ -73,7 +73,7 @@ h1 {
 }
 
 h2 {
-  margin: 0; padding: $leading 0;
+  margin: $leading 0;
   font-weight: $boldweight;
   line-height: $leading*2;
   font-size: 24px;
@@ -89,7 +89,7 @@ h2 {
 }
 
 h3 {
-  margin: 0; padding: $leading 0;
+  margin: $leading 0;
   font-size: 22px;
   font-weight: $boldweight;
   //line-height: $leading*2;
@@ -101,7 +101,7 @@ h3 {
 }
 
 h4 {
-  margin: 0; padding: $leading 0;
+  margin: $leading 0;
   font-size: $body;
   font-weight: $boldweight;
   line-height: $leading*2;
@@ -112,8 +112,7 @@ p {
 }
 
 p.lede {
-  margin: 0;
-  padding: 0 0 $leading*2 0;
+  margin: 0 0 $leading*2 0;
   font-size: $body;
   letter-spacing: 0.01em;
   line-height: $leading*2;
