@@ -14,12 +14,14 @@ i.e. NHS is blue50 as thats a median point, and if we add dark or light tints,
 we can add other blues, named like blue40 (for a lighter blue) or blue60 for a darker blue.
 
 */
+/*#0988E7;*/
 /* #70C1FF */
 /*
   colours to test:
   very light grey:F7F7F7
   very light NHS blue: EBF6FF
 */
+/*#5CAEED; /* #0AC0FC; E2EEFB */
 @font-face {
   font-family: 'FS Me';
   src: url("/fonts/FSMeWeb-Light.woff");
@@ -452,7 +454,7 @@ img {
 
 #global-header {
   background-color: #0072C6;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .header-container {
@@ -541,7 +543,8 @@ html {
 
 #local-header {
   color: #ffffff;
-  background-color: #0988E7;
+  background-color: #006BBD;
+  /* $light-blue;*/
 }
 
 .header-local-container {
@@ -566,7 +569,7 @@ html {
 }
 
 .header-local-container a:visited {
-  color: #0AC0FC;
+  color: #D4EFFF;
 }
 
 .condition-navigation > .nav-list {
