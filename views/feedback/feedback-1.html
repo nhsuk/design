@@ -2,6 +2,10 @@
 
 {% set pagetitle = "Headache" %}
 
+{% block feedback %}
+  {% include "_includes/feedback-bar.html" %}
+{% endblock %}
+
 {% block localheader %}
   <div id="local-header">
     <div class="header-local-container">
@@ -82,7 +86,7 @@
               </ul>
 
               <p>You might have <a href="http://www.nhs.uk/Conditions/Migraine/Pages/Introduction.aspx">migraine</a> or <A href="http://www.nhs.uk/conditions/cluster-headaches/Pages/Introduction.aspx">cluster headaches</a>.</p>
-              
+
               <div>
                 <a href="#" class="button">Book a GP</a>
               </div>
@@ -91,7 +95,7 @@
 
       </div>
 
-  </div> <!-- end row -->    
+  </div> <!-- end row -->
 
 </div> <!-- content -->
 
@@ -100,7 +104,7 @@
   <div class="content">
 
       <div class="grid-row">
-            
+
           <div class="grid-2-3">
 
             <div class="callout oneoneone">
@@ -111,8 +115,8 @@
           </div>
 
       </div> <!-- end row -->
-      
-  </div>  
-  
+
+  </div>
+
 </div>
 {% endblock %}

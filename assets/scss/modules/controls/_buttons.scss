@@ -4,19 +4,19 @@
 .button {
   box-sizing: border-box;
   display: inline-block;
-  min-width: 200px;
-  height: $leading*4;
-  line-height: $leading*3.6; /*Do we need a mixin for this  to determine line height based on font height? */
-  padding: 0 $leading;
-  border: 0;
+  //min-width: 200px;
+  font-family: inherit;
+  font-weight: $boldweight;
+  font-size: inherit;
+  line-height: $leading*3; /*Do we need a mixin for this  to determine line height based on font height? */
+  padding: 0 $leading*2;
+  margin-right: $leading*2;
   text-align: center;
   color: $white;
   background-color: $green;
   cursor: pointer;
   border: 2px solid $dark-green;
-  border-radius: 2;
   -webkit-appearance: none;
-  font-weight: $bodyweight;
   letter-spacing: 1.000px;
 
 
@@ -38,4 +38,24 @@
 .button::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+.button {
+
+  &.-cancel {
+    background-color: $red;
+    border-color: $red;
+  }
+
+  &.-submit-feedback {
+    background-color: $feedback-button-green;
+    border-color: $feedback-button-green;
+  }
+
+  &.-opt-out {
+    color: $pure-black;
+    background-color: $opt-out-button-grey;
+    border-color: $opt-out-button-grey;
+  }
+
 }
