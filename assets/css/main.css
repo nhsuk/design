@@ -356,12 +356,6 @@ body {
   }
 }
 
-.callout ul {
-  list-style-type: none;
-  list-style-position: inside;
-  padding-left: 0em;
-}
-
 .callout li {
   letter-spacing: 0.5px;
 }
