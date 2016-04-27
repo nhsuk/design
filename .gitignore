@@ -7,3 +7,7 @@ node_modules
 .sass-cache
 
 assets/fonts
+
+# Generated css
+
+assets/css
