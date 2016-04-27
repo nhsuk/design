@@ -5,13 +5,13 @@
     -webkit-columns: 2;
     -moz-columns: 2;
     columns: 2;
+    padding-left: 0;
 
     > .nav-item {
-      margin:  0px;
-      padding-left: 0;
+      list-style-position: inside;
+      margin-bottom: 0;
     }
 
   }
 
 }
-

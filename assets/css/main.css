@@ -187,10 +187,11 @@ p.lede {
   -webkit-columns: 2;
   -moz-columns: 2;
   columns: 2;
+  padding-left: 0;
 }
 .condition-navigation > .nav-list > .nav-item {
-  margin: 0px;
-  padding-left: 0;
+  list-style-position: inside;
+  margin-bottom: 0;
 }
 
 .pagination-container {
@@ -353,12 +354,6 @@ body {
     top: -64px;
     padding-top: 16px;
   }
-}
-
-.callout ul {
-  list-style-type: none;
-  list-style-position: inside;
-  padding-left: 0em;
 }
 
 .callout li {
@@ -588,10 +583,6 @@ html {
   color: #D4EFFF;
 }
 
-.condition-navigation > .nav-list {
-  list-style-type: decimal;
-}
-
 .feedback-strip {
   background-color: #FFB81C;
 }
@@ -654,9 +645,16 @@ p {
 ul, ol {
   margin: 16px 0 32px 0;
   padding-left: 1em;
-  list-style-type: disc;
   letter-spacing: 0.01em;
-  list-style-position: inside;
+  list-style-position: outside;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
 }
 
 li {
