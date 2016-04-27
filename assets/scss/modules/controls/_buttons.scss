@@ -4,13 +4,13 @@
 .button {
   box-sizing: border-box;
   display: inline-block;
-  //min-width: 200px;
   font-family: inherit;
   font-weight: $boldweight;
   font-size: inherit;
   line-height: $leading*3; /*Do we need a mixin for this  to determine line height based on font height? */
+  width: 100%;
   padding: 0 $leading*2;
-  margin-right: $leading*2;
+  margin: 0 0 $leading 0;
   text-align: center;
   color: $white;
   background-color: $green;
@@ -29,8 +29,9 @@
     background-color: $green;
   }
 
-  @include media(large) {
+  @include media(mid) {
     width: auto;
+    margin: 0 $leading*2 0 0;
   }
 }
 
