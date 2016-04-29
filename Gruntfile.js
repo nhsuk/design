@@ -4,6 +4,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    clean: ['assets/css'],
+
     nodemon: {
       dev: {
         script: 'app.js'
@@ -39,11 +41,20 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-concurrent');
 
-  grunt.registerTask('default', ['concurrent:target']);
+  grunt.registerTask('generate-assets', [
+    'clean',
+    'sass'
+  ]);
+
+  grunt.registerTask('default', [
+    'generate-assets',
+    'concurrent:target'
+  ]);
 
 };
