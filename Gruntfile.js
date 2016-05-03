@@ -15,7 +15,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: 'expanded'
+          outputStyle: 'expanded',
+          sourceMap: false
         },
         files: {
           'assets/css/main.css': 'assets/scss/main.scss'
@@ -43,7 +44,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-nodemon');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-concurrent');
 
