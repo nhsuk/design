@@ -1,5 +1,5 @@
 <div id="feedback-area">
-  <form name="feedback-form-2" class="feedback-form-container" action="feedback-4" method="get">
+  <form name="feedback-form-2" class="feedback-form-container" action="/volunteer-for-research" method="post">
     <div class="grid-row">
       <div class="grid-1-2">
         <h2>Thanks for your feedback</h2>
@@ -15,6 +15,8 @@
         <p class="smallprint">We will never spam you, nor share your email with others.</p>
       </div>
     </div>
+    <input type="hidden" name="feedback-referrer" value="I am a referrer">
+    <input type="hidden" name="feedback-page" value="{{ pagetitle }}">
     <button type="submit" class="button -submit-feedback">Send</button>
     <button type="reset" class="button -opt-out">No thanks</button>
   </form>

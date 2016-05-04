@@ -1,6 +1,7 @@
 var express = require('express');
 var nunjucks = require('express-nunjucks');
 var request = require('request');
+var bodyParser = require('body-parser');
 var moment = require('moment');
 var moment = require('moment-timezone');
 var app = express();
@@ -10,6 +11,7 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
 app.use(express.static('assets'));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // pass analytics codes to all templates
 app.use(function(req, res, next){
@@ -28,38 +30,77 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-// Let's try talking to endpoints
-app.get('/endpoint-test', function (req, res) {
+// ******************************** ENDPOINTS ********************************
 
+// Globals
+var endpoint = 'https://feedbacknhsuk.azure-api.net/add';
+var headers = {
+  'Content-Type': 'application/json',
+  'Ocp-Apim-Subscription-Key': 'ca86cedb4644425e9175579dd560fdbd' // regenerate and make a config var
+};
+var method = 'POST';
+
+// let's post feedback from dummy forms
+app.post('/page-feedback', function(req, res) {
+
+  var feedback = req.body['feedback-form-comments'];
+  var referrer = req.body['feedback-referrer'];
+  var page = req.body['feedback-page'];
   var now = moment().tz("Europe/London").format();
-  console.log(now);
 
   var options = {
-    method: 'POST',
-    uri: 'https://feedbacknhsuk.azure-api.net/add',
+    method: method,
+    uri: endpoint,
     form: {
-     "userId": "timestamp-1",
-     "jSonData": "{'thing': 'something'}",
-     "text": "Testing timestamp from localhost",
+     "userId": "SESSION ID?",
+     "jSonData": "{'referrer': '" + referrer + "'}",
+     "text": feedback,
      "dateAdded": now,
-     "emailAddress": "mat.johnson@digital.nhs.uk",
-     "pageId": "endpoint-test",
-     "rating": "0"
+     "pageId": page
     },
-    headers: {
-      'Content-Type': 'application/json',
-      'Ocp-Apim-Subscription-Key': '8bfa21c10782495680605bc58c66c923'
-    }
+    headers: headers
   };
-
-  console.log(options);
 
   request(options, function(error, response, body) {
     // 201: resource created
     if (!error && response.statusCode == 201) {
+      res.redirect('/feedback/feedback-3');
+      console.log(response.statusCode);
+    } else {
       res.send({
-        success: true
+        success: false
       });
+      console.log(response.statusCode + ' and ' + error);
+    }
+  });
+});
+
+// let's get volunteers from dummy forms
+app.post('/volunteer-for-research', function(req, res) {
+
+  var name = req.body['feedback-form-name'];
+  var email = req.body['feedback-form-email'];
+  var referrer = req.body['feedback-referrer'];
+  var page = req.body['feedback-page'];
+  var now = moment().tz("Europe/London").format();
+
+  var options = {
+    method: method,
+    uri: endpoint,
+    form: {
+     "userId": "SESSION ID?",
+     "jSonData": "{'name': '" + name + "','referrer': '" + referrer + "'}",
+     "dateAdded": now,
+     "pageId": page,
+     "emailAddress": email
+    },
+    headers: headers
+  };
+
+  request(options, function(error, response, body) {
+    // 201: resource created
+    if (!error && response.statusCode == 201) {
+      res.redirect('/feedback/feedback-4');
       console.log(response.statusCode);
     } else {
       res.send({
@@ -70,6 +111,8 @@ app.get('/endpoint-test', function (req, res) {
   });
 
 });
+
+// ******************************* END ENDPOINTS ******************************
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {
