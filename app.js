@@ -41,7 +41,7 @@ app.get('/endpoint-test', function (req, res) {
      "dateAdded": "2016-05-04 12:28:00",
      "emailAddress": "mat.johnson@digital.nhs.uk",
      "pageId": "endpoint-test",
-     "rating": 0
+     "rating": "0"
     },
     headers: {
       'Content-Type': 'application/json',
