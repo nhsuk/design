@@ -6,12 +6,7 @@ img {
 .image-module {
   margin: 0 0 $leading*2 0;
   min-height: $leading*18 ;
-}
-
-.image-module img {
-  margin-right: 28px;
-  float: left;
-
+  border-bottom: 1px solid rgba($nhs-blue,0.2);
 }
 
 .image-description {
