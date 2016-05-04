@@ -8,6 +8,7 @@
     "url": "git+https://github.com/nhsalpha/design.git"
   },
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "express-nunjucks": "^0.9.6",
     "grunt": "^0.4.5",
