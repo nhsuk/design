@@ -4,6 +4,15 @@
 
 {% block feedback %}
   {% include "_includes/feedback-bar.html" %}
+  {% if display == "feedback-form" %}
+    {% include "_includes/feedback-area-1.html" %}
+  {% endif %}
+  {% if display == "volunteer-form" %}
+    {% include "_includes/feedback-area-2.html" %}
+  {% endif %}
+  {% if display == "thanks-message" %}
+    {% include "_includes/feedback-area-3.html" %}
+  {% endif %}
 {% endblock %}
 
 {% block localheader %}

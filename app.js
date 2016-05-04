@@ -40,8 +40,14 @@ var headers = {
 };
 var method = 'POST';
 
+app.get('/feedback/feedback-example/feedback-form', function(req, res) {
+  res.render('feedback/feedback-example', {
+    display: 'feedback-form'
+  });
+});
+
 // let's post feedback from dummy forms
-app.post('/page-feedback', function(req, res) {
+app.post('/feedback/feedback-example/feedback-form', function(req, res) {
 
   var feedback = req.body['feedback-form-comments'];
   var referrer = req.body['feedback-referrer'];
@@ -64,7 +70,9 @@ app.post('/page-feedback', function(req, res) {
   request(options, function(error, response, body) {
     // 201: resource created
     if (!error && response.statusCode == 201) {
-      res.redirect('/feedback/feedback-3');
+      res.render('feedback/feedback-example', {
+        display: 'volunteer-form'
+      });
       console.log(response.statusCode);
     } else {
       res.send({
@@ -76,7 +84,7 @@ app.post('/page-feedback', function(req, res) {
 });
 
 // let's get volunteers from dummy forms
-app.post('/volunteer-for-research', function(req, res) {
+app.post('/feedback/feedback-example/volunteer-form', function(req, res) {
 
   var name = req.body['feedback-form-name'];
   var email = req.body['feedback-form-email'];
@@ -100,7 +108,9 @@ app.post('/volunteer-for-research', function(req, res) {
   request(options, function(error, response, body) {
     // 201: resource created
     if (!error && response.statusCode == 201) {
-      res.redirect('/feedback/feedback-4');
+      res.render('feedback/feedback-example', {
+        display: 'thanks-message'
+      });
       console.log(response.statusCode);
     } else {
       res.send({
