@@ -1,5 +1,6 @@
 var express = require('express');
 var nunjucks = require('express-nunjucks');
+var request = require('request');
 var app = express();
 
 // Application settings
@@ -23,6 +24,46 @@ nunjucks.setup({
 
 app.get('/', function (req, res) {
   res.render('index');
+});
+
+// Let's try talking to endpoints
+app.get('/endpoint-test', function (req, res) {
+
+  var options = {
+    method: 'POST',
+    uri: 'https://feedbacknhsuk.azure-api.net/add',
+    form: {
+     "userId": "654321",
+     "jSonData": {
+       "thing": "something"
+     },
+     "text": "Testing /endpoint-test from localhost",
+     "dateAdded": "2016-05-04 12:28:00",
+     "emailAddress": "mat.johnson@digital.nhs.uk",
+     "pageId": "endpoint-test",
+     "rating": 0
+    },
+    headers: {
+      'Content-Type': 'application/json',
+      'Ocp-Apim-Subscription-Key': '8bfa21c10782495680605bc58c66c923'
+    }
+  };
+
+  request(options, function(error, response, body) {
+    // 201: resource created
+    if (!error && response.statusCode == 201) {
+      res.send({
+        success: true
+      });
+      console.log(response.statusCode);
+    } else {
+      res.send({
+        success: false
+      });
+      console.log(response.statusCode + ' and ' + error);
+    }
+  });
+
 });
 
 // auto render any view that exists
