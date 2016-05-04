@@ -39,9 +39,7 @@ app.get('/endpoint-test', function (req, res) {
     uri: 'https://feedbacknhsuk.azure-api.net/add',
     form: {
      "userId": "timestamp-1",
-     "jSonData": {
-       "thing": "something"
-     },
+     "jSonData": "{'thing': 'something'}",
      "text": "Testing timestamp from localhost",
      "dateAdded": now,
      "emailAddress": "mat.johnson@digital.nhs.uk",
