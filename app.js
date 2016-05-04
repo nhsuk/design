@@ -1,6 +1,8 @@
 var express = require('express');
 var nunjucks = require('express-nunjucks');
 var request = require('request');
+var moment = require('moment');
+var moment = require('moment-timezone');
 var app = express();
 
 // Application settings
@@ -29,16 +31,19 @@ app.get('/', function (req, res) {
 // Let's try talking to endpoints
 app.get('/endpoint-test', function (req, res) {
 
+  var now = moment().tz("Europe/London").format();
+  console.log(now);
+
   var options = {
     method: 'POST',
     uri: 'https://feedbacknhsuk.azure-api.net/add',
     form: {
-     "userId": "654321",
+     "userId": "timestamp-1",
      "jSonData": {
        "thing": "something"
      },
-     "text": "Testing /endpoint-test from localhost",
-     "dateAdded": "2016-05-04 12:28:00",
+     "text": "Testing timestamp from localhost",
+     "dateAdded": now,
      "emailAddress": "mat.johnson@digital.nhs.uk",
      "pageId": "endpoint-test",
      "rating": "0"
@@ -48,6 +53,8 @@ app.get('/endpoint-test', function (req, res) {
       'Ocp-Apim-Subscription-Key': '8bfa21c10782495680605bc58c66c923'
     }
   };
+
+  console.log(options);
 
   request(options, function(error, response, body) {
     // 201: resource created
