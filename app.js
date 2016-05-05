@@ -4,6 +4,8 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var validator = require('express-validator');
 var moment = require('moment-timezone');
+var cookieSession = require('cookie-session');
+var uuid = require('node-uuid');
 var app = express();
 
 // Application settings
@@ -26,6 +28,17 @@ nunjucks.setup({
   watch: true,
   noCache: true
 }, app);
+
+app.use(cookieSession({
+  secret: 'tborqwitno'
+}));
+
+app.use(function (req, res, next) {
+  // Generate a v4 (random) id like '110ec58a-a0f2-4ac4-8393-c866d813b8d1'
+  req.session.ID = (req.session.ID || uuid.v4());
+  console.log(req.session);
+  next();
+})
 
 app.get('/', function (req, res) {
   res.render('index');
