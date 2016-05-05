@@ -2,6 +2,7 @@ var express = require('express');
 var nunjucks = require('express-nunjucks');
 var request = require('request');
 var bodyParser = require('body-parser');
+var validator = require('express-validator');
 var moment = require('moment-timezone');
 var app = express();
 
@@ -11,6 +12,7 @@ app.set('views', __dirname + '/views');
 
 app.use(express.static('assets'));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(validator()); // this line must be immediately after express.bodyParser()!
 
 // pass analytics codes to all templates
 app.use(function(req, res, next){
