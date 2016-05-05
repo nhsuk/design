@@ -1,14 +1,15 @@
 <div id="feedback-area">
-  <form name="feedback-form-1" class="feedback-form-container" action="/feedback/feedback-example/feedback-form" method="post">
+  <form name="feedback-form-1" class="feedback-form-container" method="post">
     <label for="feedback-form-comments" class="heading-xlarge">What’s useful about this page? What's missing?</label>
     <div class="grid-row">
       <div class="grid-2-3">
         <textarea name="feedback-form-comments" id="feedback-form-comments" rows="4"></textarea>
       </div>
     </div>
-    <input type="hidden" name="feedback-referrer" value="I am a referrer">
-    <input type="hidden" name="feedback-page" value="{{ pagetitle }}">
+    <input type="hidden" name="stage" value="feedback-form">
+    <input type="hidden" name="referrer" value="I am a referrer">
+    <input type="hidden" name="page" value="{{ pagetitle }}">
     <button type="submit" class="button -submit-feedback">Send feedback</button>
-    <button type="reset" class="button -cancel">Cancel</button>
+    <a href="/feedback/feedback-example" class="button -cancel">Cancel</a>
   </form>
 </div>

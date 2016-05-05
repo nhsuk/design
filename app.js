@@ -2,7 +2,6 @@ var express = require('express');
 var nunjucks = require('express-nunjucks');
 var request = require('request');
 var bodyParser = require('body-parser');
-var moment = require('moment');
 var moment = require('moment-timezone');
 var app = express();
 
@@ -40,77 +39,60 @@ var headers = {
 };
 var method = 'POST';
 
-app.get('/feedback/feedback-example/feedback-form', function(req, res) {
+app.get('/feedback/feedback-example/feedback', function(req, res) {
   res.render('feedback/feedback-example', {
     display: 'feedback-form'
   });
 });
 
-// let's post feedback from dummy forms
-app.post('/feedback/feedback-example/feedback-form', function(req, res) {
+// let's post from dummy forms
+app.post('/feedback/feedback-example/feedback', function(req, res) {
 
+  var stage = req.body['stage'];
+  var referrer = req.body['referrer'];
   var feedback = req.body['feedback-form-comments'];
-  var referrer = req.body['feedback-referrer'];
-  var page = req.body['feedback-page'];
+  var name = req.body['volunteer-form-name'];
+  var email = req.body['volunteer-form-email'];
+  var page = req.body['page'];
   var now = moment().tz("Europe/London").format();
 
-  var options = {
-    method: method,
-    uri: endpoint,
-    form: {
-     "userId": "SESSION ID?",
-     "jSonData": "{'referrer': '" + referrer + "'}",
+  if (stage === 'feedback-form') {
+    var submission = {
+     "userId": "SESSION ID OF SOME SORT",
+     "jSonData": "{'referrer': '" + referrer + "', 'stage': '" + stage + "'}",
      "text": feedback,
      "dateAdded": now,
      "pageId": page
-    },
-    headers: headers
-  };
-
-  request(options, function(error, response, body) {
-    // 201: resource created
-    if (!error && response.statusCode == 201) {
-      res.render('feedback/feedback-example', {
-        display: 'volunteer-form'
-      });
-      console.log(response.statusCode);
-    } else {
-      res.send({
-        success: false
-      });
-      console.log(response.statusCode + ' and ' + error);
     }
-  });
-});
-
-// let's get volunteers from dummy forms
-app.post('/feedback/feedback-example/volunteer-form', function(req, res) {
-
-  var name = req.body['feedback-form-name'];
-  var email = req.body['feedback-form-email'];
-  var referrer = req.body['feedback-referrer'];
-  var page = req.body['feedback-page'];
-  var now = moment().tz("Europe/London").format();
+  } else if (stage === 'volunteer-form') {
+    var submission = {
+     "userId": "SESSION ID OF SOME SORT",
+     "jSonData": "{'name': '" + name + "','referrer': '" + referrer + "', 'stage': '" + stage + "'}",
+     "emailAddress": email,
+     "dateAdded": now,
+     "pageId": page
+    }
+  }
 
   var options = {
     method: method,
     uri: endpoint,
-    form: {
-     "userId": "SESSION ID?",
-     "jSonData": "{'name': '" + name + "','referrer': '" + referrer + "'}",
-     "dateAdded": now,
-     "pageId": page,
-     "emailAddress": email
-    },
+    form: submission,
     headers: headers
   };
 
   request(options, function(error, response, body) {
     // 201: resource created
     if (!error && response.statusCode == 201) {
-      res.render('feedback/feedback-example', {
-        display: 'thanks-message'
-      });
+      if (stage === 'feedback-form') {
+        res.render('feedback/feedback-example', {
+          display: 'volunteer-form'
+        });
+      } else if (stage === 'volunteer-form') {
+        res.render('feedback/feedback-example', {
+          display: 'thanks-message'
+        });
+      }
       console.log(response.statusCode);
     } else {
       res.send({
