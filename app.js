@@ -36,7 +36,6 @@ app.use(cookieSession({
 app.use(function (req, res, next) {
   // Generate a v4 (random) id like '110ec58a-a0f2-4ac4-8393-c866d813b8d1'
   req.session.ID = (req.session.ID || uuid.v4());
-  console.log(req.session);
   next();
 })
 
@@ -101,7 +100,7 @@ app.post('/feedback/feedback-example/feedback', function(req, res) {
 
   if (stage === 'feedback-form') {
     var submission = {
-     "userId": "SESSION ID OF SOME SORT",
+     "userId": req.session.ID,
      "jSonData": "{'referrer': '" + referrer + "', 'stage': '" + stage + "'}",
      "text": feedback,
      "dateAdded": now,
@@ -109,7 +108,7 @@ app.post('/feedback/feedback-example/feedback', function(req, res) {
     }
   } else if (stage === 'volunteer-form') {
     var submission = {
-     "userId": "SESSION ID OF SOME SORT",
+     "userId": req.session.ID,
      "jSonData": "{'name': '" + name + "','referrer': '" + referrer + "', 'stage': '" + stage + "'}",
      "emailAddress": email,
      "dateAdded": now,
