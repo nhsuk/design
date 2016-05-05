@@ -51,12 +51,40 @@ app.get('/feedback/feedback-example/feedback', function(req, res) {
 app.post('/feedback/feedback-example/feedback', function(req, res) {
 
   var stage = req.body['stage'];
-  var referrer = req.body['referrer'];
-  var feedback = req.body['feedback-form-comments'];
-  var name = req.body['volunteer-form-name'];
-  var email = req.body['volunteer-form-email'];
-  var page = req.body['page'];
+
+  // check for errors and sanitise
+
+  if (stage === 'feedback-form') {
+    req.checkBody('feedback-form-comments', 'Please add your comments.').notEmpty();
+    var feedback = req.sanitizeBody('feedback-form-comments').escape();
+  } else if (stage === 'volunteer-form') {
+    req.checkBody('volunteer-form-name', 'Please give us your name.').notEmpty();
+    var name = req.sanitizeBody('volunteer-form-name').escape();
+    req.checkBody("volunteer-form-email", "Please enter a valid email.").isEmail();
+    var email = req.body['volunteer-form-email'];
+  }
+
+  var referrer = req.sanitizeBody('referrer').escape();
+  var page = req.sanitizeBody('page').escape();
   var now = moment().tz("Europe/London").format();
+
+  var errors = req.validationErrors();
+  if (errors) {
+    if (stage === 'feedback-form') {
+      res.render('feedback/feedback-example', {
+        display: 'feedback-form',
+        errors: errors
+      });
+    } else if (stage === 'volunteer-form') {
+      res.render('feedback/feedback-example', {
+        display: 'volunteer-form',
+        errors: errors,
+        nameVal: name,
+        emailVal: email
+      });
+    }
+    return;
+  }
 
   if (stage === 'feedback-form') {
     var submission = {
