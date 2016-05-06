@@ -11,3 +11,7 @@ assets/fonts
 # Generated css
 
 assets/css
+
+# Env file
+
+.env
