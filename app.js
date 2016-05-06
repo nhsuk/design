@@ -49,7 +49,7 @@ app.get('/', function (req, res) {
 var endpoint = 'https://feedbacknhsuk.azure-api.net/add';
 var headers = {
   'Content-Type': 'application/json',
-  'Ocp-Apim-Subscription-Key': 'ca86cedb4644425e9175579dd560fdbd' // regenerate and make a config var
+  'Ocp-Apim-Subscription-Key': process.env.API_KEY
 };
 var method = 'POST';
 
