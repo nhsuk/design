@@ -1,8 +1,12 @@
 .callout {
   padding: $leading $leading*2;
-  > .heading {
-    @extend .heading-xlarge;
+
+  > .column-list {
+      -webkit-columns: 2;
+      -moz-columns: 2;
+      columns: 2;
   }
+  
 }
 
 .callout.aside {
@@ -34,17 +38,16 @@
 /* 999 callout variation */
 
 .callout.emergency {
-  background-color: rgba($red, 0.8);
+  background-color: rgba($red, 0.9);
   font-weight: $bodyweight;
   color: $white;
-  margin-bottom: $leading*2;
+  margin: $leading, 0px, $leading, 0px;
 
   > ul, p {
     font-size: $callout;
     font-weight: $lightweight;
     line-height: $leading*1.5;
   }
-
 
 }
 

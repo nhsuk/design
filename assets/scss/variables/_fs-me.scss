@@ -76,7 +76,7 @@ h2 {
   margin: $leading 0;
   font-weight: $boldweight;
   line-height: $leading*2;
-  font-size: 24px;
+  font-size: 28px;
 
   @include media(mid) {
     font-weight: $boldweight;
@@ -90,10 +90,9 @@ h2 {
 
 h3 {
   margin: $leading 0;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: $boldweight;
-  //line-height: $leading*2;
-  line-height: 30px;
+  line-height: $leading*2;
 
   @include media(large) {
 
@@ -120,7 +119,7 @@ p.lede {
   color: $light-blue3;
 
   @include media(large) {
-    font-size: 24px;
+    // font-size: 24px;
   }
 }
 
