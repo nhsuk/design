@@ -8,8 +8,11 @@
     "url": "git+https://github.com/nhsalpha/design.git"
   },
   "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-session": "^2.0.0-alpha.1",
     "express": "^4.13.4",
     "express-nunjucks": "^0.9.6",
+    "express-validator": "^2.20.3",
     "grunt": "^0.4.5",
     "grunt-cli": "^1.2.0",
     "grunt-concurrent": "^2.1.0",
@@ -17,6 +20,10 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-nodemon": "^0.4.1",
     "grunt-sass": "^1.1.0",
-    "nodemon": "^1.8.1"
+    "moment": "^2.13.0",
+    "moment-timezone": "^0.5.4",
+    "node-uuid": "^1.4.7",
+    "nodemon": "^1.8.1",
+    "request": "^2.72.0"
   }
 }
