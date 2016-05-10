@@ -1,5 +1,9 @@
+#feedback-area {
+    background-color: tint($feedback-alert-strip, 80) ;
+}
+
 .feedback-strip {
-  background-color: $yellow2;
+  background-color: $feedback-alert-strip;
 }
 .feedback-strip-container {
   @extend %block;
