@@ -17,10 +17,10 @@ Then:
 
 To stop it all: ```^c```
 
-### Feedback mechanism
+## Environment variables
 
-If you want to run ```/feedback/feedback-example``` locally, and successfully
-```POST```, you'll need to set the Heroku ```API_KEY``` config on your machine (a
-[good way](https://devcenter.heroku.com/articles/heroku-local#copy-heroku-config-vars-to-your-local-env-file)
-is with an ```.env``` file). Run the site locally with ```heroku local``` *NOT*
-the ```grunt``` command.
+Grab a team member to share environment vars with you. At the moment there are
+variables for:
+
+- Feeback example endpoint
+- Google Analytics tracking

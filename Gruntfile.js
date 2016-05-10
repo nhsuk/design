@@ -6,6 +6,12 @@ module.exports = function(grunt) {
 
     clean: ['assets/css'],
 
+    env : {
+      heroku : {
+        src : ".env"
+      }
+    },
+
     nodemon: {
       dev: {
         script: 'app.js'
@@ -47,6 +53,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-env');
 
   grunt.registerTask('generate-assets', [
     'clean',
@@ -55,6 +62,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'generate-assets',
+    'env:heroku',
     'concurrent:target'
   ]);
 
