@@ -1,68 +1,64 @@
 {% set nameError = false %}
 {% set emailError = false %}
 
-<div id="feedback-area">
-  <form name="feedback-form-2" class="feedback-form-container" method="post">
+<form name="volunteer-form" class="feedback-form-container" method="post">
 
-    {% if errors %}
-    <div class="grid-row">
-      <div class="grid-2-3">
-        <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
-          <h1 class="error-summary-heading heading-large" id="error-summary-heading">
-            Sorry, there are some missing or incorrect details
-          </h1>
-          <ul>
-            {% for error in errors %}
-            <li>
-              {% if error.param == 'volunteer-form-name' %}
-                {% set nameError = true %}
-                <a href="#volunteer-form-name">Your name</a>
-              {% endif %}
-              {% if error.param == 'volunteer-form-email' %}
-                {% set emailError = true %}
-                <a href="#volunteer-form-email">Your email</a>
-              {% endif %}
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+  {% if errors %}
+  <div class="grid-row">
+    <div class="grid-2-3">
+      <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+        <h1 class="error-summary-heading heading-large" id="error-summary-heading">
+          Sorry, there are some missing or incorrect details
+        </h1>
+        <ul>
+          {% for error in errors %}
+          <li>
+            {% if error.param == 'volunteer-form-name' %}
+              {% set nameError = true %}
+              <a href="#volunteer-form-name">Your name</a>
+            {% endif %}
+            {% if error.param == 'volunteer-form-email' %}
+              {% set emailError = true %}
+              <a href="#volunteer-form-email">Your email</a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
-    {% endif %}
+  </div>
+  {% endif %}
 
-    <div class="grid-row">
-      <div class="grid-1-2">
-        <h2>Thanks for your feedback</h2>
-        <p>If you want to take part in further research with NHS Choices, enter your details:</p>
+  <div class="grid-row">
+    <div class="grid-1-2">
+      <h2>Thanks for your feedback</h2>
+      <p>If you want to take part in further research with NHS Choices, enter your details:</p>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="grid-5-12">
+      <div class="form-group {% if nameError == true %}-errors{% endif %}">
+        <label for="volunteer-form-name">
+          Your name
+          {% if nameError == true %}
+            <span class="error-hint">Please enter your name</span>
+          {% endif %}
+        </label>
+        <input type="text" name="volunteer-form-name" id="volunteer-form-name" value="{{ nameVal }}">
+      </div>
+      <div class="form-group {% if emailError == true %}-errors{% endif %}">
+        <label for="volunteer-form-email">
+          Your email
+          {% if emailError == true %}
+            <span class="error-hint">Please enter a valid email</span>
+          {% endif %}
+        </label>
+        <input type="text" name="volunteer-form-email" id="volunteer-form-email" value="{{ emailVal }}">
+        <p class="smallprint">We will never spam you, nor share your email with others.</p>
       </div>
     </div>
-    <div class="grid-row">
-      <div class="grid-5-12">
-        <div class="form-group {% if nameError == true %}-errors{% endif %}">
-          <label for="volunteer-form-name">
-            Your name
-            {% if nameError == true %}
-              <span class="error-hint">Please enter your name</span>
-            {% endif %}
-          </label>
-          <input type="text" name="volunteer-form-name" id="volunteer-form-name" value="{{ nameVal }}">
-        </div>
-        <div class="form-group {% if emailError == true %}-errors{% endif %}">
-          <label for="volunteer-form-email">
-            Your email
-            {% if nameError == true %}
-              <span class="error-hint">Please enter a valid email</span>
-            {% endif %}
-          </label>
-          <input type="text" name="volunteer-form-email" id="volunteer-form-email" value="{{ emailVal }}">
-          <p class="smallprint">We will never spam you, nor share your email with others.</p>
-        </div>
-      </div>
-    </div>
-    <input type="hidden" name="stage" value="volunteer-form">
-    <input type="hidden" name="referrer" value="I am a referrer">
-    <input type="hidden" name="page" value="{{ pagetitle }}">
-    <button type="submit" class="button -submit-feedback">Send</button>
-    <a href="/feedback/feedback-example" class="button -opt-out">No thanks</a>
-  </form>
-</div>
+  </div>
+  <input type="hidden" name="stage" value="volunteer-form">
+  <button type="submit" class="button -submit-feedback">Send</button>
+  <a href="/feedback/feedback-example" class="button -opt-out">No thanks</a>
+</form>

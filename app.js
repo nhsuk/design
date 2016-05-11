@@ -43,7 +43,32 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-// ******************************** ENDPOINTS ********************************
+// **************************** ENDPOINT FUNCTIONS *****************************
+
+// Error checking
+var checkInput = function(req) {
+
+  var stage = req.body['stage'];
+
+  if (stage === 'feedback-form') {
+    req.checkBody('feedback-form-comments', 'Please add your comments.').notEmpty();
+  } else if (stage === 'volunteer-form') {
+    req.checkBody('volunteer-form-name', 'Please give us your name.').notEmpty();
+    req.checkBody("volunteer-form-email", "Please enter a valid email.").isEmail();
+  }
+
+  var errors = req.validationErrors();
+  if (errors) {
+    return errors;
+  }
+
+};
+
+var getNow = function() {
+  return moment().tz("Europe/London").format('YYYY-MM-DD HH:mm:ss');
+}
+
+// Submission to endpoints
 
 // Globals
 var endpoint = 'https://feedbacknhsuk.azure-api.net/add';
@@ -52,6 +77,13 @@ var headers = {
   'Ocp-Apim-Subscription-Key': process.env.API_KEY
 };
 var method = 'POST';
+var endpointOptions = {
+  method: method,
+  uri: endpoint,
+  headers: headers
+};
+
+// ************************** STANDARD FORM FEEDBACK ***************************
 
 app.get('/feedback/feedback-example/feedback', function(req, res) {
   res.render('feedback/feedback-example', {
@@ -64,66 +96,57 @@ app.post('/feedback/feedback-example/feedback', function(req, res) {
 
   var stage = req.body['stage'];
 
-  // check for errors and sanitise
+  // check for errors
+  var inputErrors = checkInput(req);
 
-  if (stage === 'feedback-form') {
-    req.checkBody('feedback-form-comments', 'Please add your comments.').notEmpty();
-    var feedback = req.sanitizeBody('feedback-form-comments').escape();
-  } else if (stage === 'volunteer-form') {
-    req.checkBody('volunteer-form-name', 'Please give us your name.').notEmpty();
-    var name = req.sanitizeBody('volunteer-form-name').escape();
-    req.checkBody("volunteer-form-email", "Please enter a valid email.").isEmail();
-    var email = req.body['volunteer-form-email'];
-  }
-
-  var referrer = req.sanitizeBody('referrer').escape();
-  var page = req.sanitizeBody('page').escape();
-  var now = moment().tz("Europe/London").format();
-
-  var errors = req.validationErrors();
-  if (errors) {
+  if (typeof inputErrors !== 'undefined') {
     if (stage === 'feedback-form') {
       res.render('feedback/feedback-example', {
         display: 'feedback-form',
-        errors: errors
+        errors: inputErrors
       });
+      return false;
     } else if (stage === 'volunteer-form') {
       res.render('feedback/feedback-example', {
         display: 'volunteer-form',
-        errors: errors,
-        nameVal: name,
-        emailVal: email
+        errors: inputErrors,
+        nameVal: req.body['volunteer-form-name'],
+        emailVal: req.body['volunteer-form-email']
       });
     }
     return;
   }
+
+  // Sanitise submitted data
+  if (stage === 'feedback-form') {
+    var feedback = req.sanitizeBody('feedback-form-comments').escape();
+  } else if (stage === 'volunteer-form') {
+    var name = req.sanitizeBody('volunteer-form-name').escape();
+    var email = req.body['volunteer-form-email'];
+  }
+
+  var rightNow = getNow();
+  var referrer = req.headers['referer'];
 
   if (stage === 'feedback-form') {
     var submission = {
      "userId": req.session.ID,
      "jSonData": "{'referrer': '" + referrer + "', 'stage': '" + stage + "'}",
      "text": feedback,
-     "dateAdded": now,
-     "pageId": page
+     "dateAdded": rightNow
     }
   } else if (stage === 'volunteer-form') {
     var submission = {
      "userId": req.session.ID,
      "jSonData": "{'name': '" + name + "','referrer': '" + referrer + "', 'stage': '" + stage + "'}",
      "emailAddress": email,
-     "dateAdded": now,
-     "pageId": page
+     "dateAdded": rightNow
     }
   }
 
-  var options = {
-    method: method,
-    uri: endpoint,
-    form: submission,
-    headers: headers
-  };
+  endpointOptions.form = submission;
 
-  request(options, function(error, response, body) {
+  request(endpointOptions, function(error, response, body) {
     // 201: resource created
     if (!error && response.statusCode == 201) {
       if (stage === 'feedback-form') {
@@ -146,7 +169,90 @@ app.post('/feedback/feedback-example/feedback', function(req, res) {
 
 });
 
-// ******************************* END ENDPOINTS ******************************
+// ************************ END STANDARD FORM FEEDBACK *************************
+
+// *************************** JS ENHANCED FEEDBACK ****************************
+
+// Feeback form snippet
+app.get('/js-load/feedback-form', function(req, res) {
+  res.render('_includes/feedback-form');
+});
+
+// Handle $.ajax POST from feedback form
+app.post('/js-submit/feedback-form', function(req, res) {
+
+  var stage = req.body['stage'];
+
+  // check for errors
+  var inputErrors = checkInput(req);
+
+  if (typeof inputErrors !== 'undefined') {
+    if (stage === 'feedback-form') {
+      res.render('_includes/feedback-form', {
+        errors: inputErrors
+      });
+      return false;
+    } else if (stage === 'volunteer-form') {
+      res.render('_includes/feedback-volunteer', {
+        errors: inputErrors,
+        nameVal: req.body['volunteer-form-name'],
+        emailVal: req.body['volunteer-form-email']
+      });
+    }
+    return;
+  }
+
+  // Sanitise submitted data
+  if (stage === 'feedback-form') {
+    var feedback = req.sanitizeBody('feedback-form-comments').escape();
+  } else if (stage === 'volunteer-form') {
+    var name = req.sanitizeBody('volunteer-form-name').escape();
+    var email = req.body['volunteer-form-email'];
+  }
+
+  var rightNow = getNow();
+  var referrer = req.headers['referer'];
+
+  if (stage === 'feedback-form') {
+    var submission = {
+     "userId": req.session.ID,
+     "jSonData": "{'referrer': '" + referrer + "', 'stage': '" + stage + "'}",
+     "text": feedback,
+     "dateAdded": rightNow
+    }
+  } else if (stage === 'volunteer-form') {
+    var submission = {
+     "userId": req.session.ID,
+     "jSonData": "{'name': '" + name + "','referrer': '" + referrer + "', 'stage': '" + stage + "'}",
+     "emailAddress": email,
+     "dateAdded": rightNow
+    }
+  }
+
+  endpointOptions.form = submission;
+
+  console.log(endpointOptions);
+
+  request(endpointOptions, function(error, response, body) {
+    // 201: resource created
+    if (!error && response.statusCode == 201) {
+      if (stage === 'feedback-form') {
+        res.render('_includes/feedback-volunteer');
+      } else if (stage === 'volunteer-form') {
+        res.render('_includes/feedback-thanks');
+      }
+      console.log(response.statusCode);
+    } else {
+      res.send({
+        success: false
+      });
+      console.log(response.statusCode + ' and ' + error);
+    }
+  });
+
+});
+
+// ************************* END JS ENHANCED FEEDBACK *************************
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {
