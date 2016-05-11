@@ -68,19 +68,13 @@ var getNow = function() {
   return moment().tz("Europe/London").format('YYYY-MM-DD HH:mm:ss');
 }
 
-// Submission to endpoints
-
-// Globals
-var endpoint = 'https://feedbacknhsuk.azure-api.net/add';
-var headers = {
-  'Content-Type': 'application/json',
-  'Ocp-Apim-Subscription-Key': process.env.API_KEY
-};
-var method = 'POST';
 var endpointOptions = {
-  method: method,
-  uri: endpoint,
-  headers: headers
+  method: 'POST',
+  uri: 'https://feedbacknhsuk.azure-api.net/add',
+  headers: {
+    'Content-Type': 'application/json',
+    'Ocp-Apim-Subscription-Key': process.env.API_KEY
+  }
 };
 
 // ************************** STANDARD FORM FEEDBACK ***************************
