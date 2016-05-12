@@ -224,6 +224,14 @@ app.post('/js-submit/feedback-form', function(req, res) {
   endpointOptions.form = submission;
 
   request(endpointOptions, function(error, response, body) {
+
+    // without server calls
+    /*if (stage === 'feedback-form') {
+      res.render('_includes/feedback-volunteer');
+    } else if (stage === 'volunteer-form') {
+      res.render('_includes/feedback-thanks');
+    }*/
+
     // 201: resource created
     if (!error && response.statusCode == 201) {
       if (stage === 'feedback-form') {
@@ -231,10 +239,10 @@ app.post('/js-submit/feedback-form', function(req, res) {
       } else if (stage === 'volunteer-form') {
         res.render('_includes/feedback-thanks');
       }
-      console.log(response.statusCode);
+      console.log(response['body']);
     } else {
       res.render('_includes/feedback-error');
-      console.log(response.statusCode + ' and ' + error);
+      console.log(response['body']);
     }
   });
 
