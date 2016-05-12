@@ -5,18 +5,21 @@
 {% block feedback %}
   {% include "_includes/feedback-bar.html" %}
   <div id="feedback-area">
-    {% if display == "feedback-form" %}
-      {% include "_includes/feedback-form.html" %}
-    {% endif %}
-    {% if display == "volunteer-form" %}
-      {% include "_includes/feedback-volunteer.html" %}
-    {% endif %}
-    {% if display == "thanks-message" %}
-      {% include "_includes/feedback-thanks.html" %}
-    {% endif %}
-    {% if display == "server-error" %}
-      {% include "_includes/feedback-error.html" %}
-    {% endif %}
+    <div id="feedback-form-area">
+      {% if display == "feedback-form" %}
+        {% include "_includes/feedback-form.html" %}
+      {% endif %}
+      {% if display == "volunteer-form" %}
+        {% include "_includes/feedback-volunteer.html" %}
+      {% endif %}
+      {% if display == "thanks-message" %}
+        {% include "_includes/feedback-thanks.html" %}
+      {% endif %}
+      {% if display == "server-error" %}
+        {% include "_includes/feedback-error.html" %}
+      {% endif %}
+    </div>
+    <div id="feedback-loading"></div>
   </div>
 {% endblock %}
 

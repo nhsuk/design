@@ -1,41 +1,42 @@
 // DOM elements
-$feedbackArea = $('#feedback-area');
 $feedbackLink = $('#feedback-link');
+$feedbackFormArea = $('#feedback-form-area');
+$feedbackLoading = $('#feedback-loading');
+
+$feedbackLoading.addClass('feedback-loading-panel').hide();
 
 // Events
-$feedbackArea.on('submit', 'form', function(e) {
+$feedbackFormArea.on('submit', 'form', function(e) {
   e.preventDefault();
-  $.post('/js-submit/feedback-form', $feedbackArea.find('form').serialize(), function(data) {
-    handleResponse(data);
+  $feedbackLoading.fadeIn();
+  $.post('/js-submit/feedback-form', $feedbackFormArea.find('form').serialize(), function(data) {
+    $feedbackFormArea.html(data);
+    $feedbackLoading.hide();
+    $('html, body').animate({ scrollTop: 0 }, 300);
   });
 });
 
-$feedbackArea.on('click', '#reset', function(e) {
+$feedbackFormArea.on('click', '#reset', function(e) {
   e.preventDefault();
-  $feedbackArea.slideUp(function() {
-    $feedbackArea.load('/js-load/feedback-form');
+  $feedbackFormArea.slideUp(function() {
+    $feedbackFormArea.load('/js-load/feedback-form');
   })
 });
 
-$feedbackArea.on('click', '#reload', function(e) {
+$feedbackFormArea.on('click', '#reload', function(e) {
   e.preventDefault();
-  $feedbackArea.slideUp(function() {
-    $feedbackArea.load('/js-load/feedback-form', function() {
-      $feedbackArea.slideDown();
+  $feedbackFormArea.slideUp(function() {
+    $feedbackFormArea.load('/js-load/feedback-form', function() {
+      $feedbackFormArea.slideDown();
     });
   })
 });
 
-// Handling the various server responses
-var handleResponse = function(data) {
-  $feedbackArea.html(data);
-};
-
 // Load in the initial feedback form:
-$feedbackArea.hide().load('/js-load/feedback-form');
+$feedbackFormArea.hide().load('/js-load/feedback-form');
 
 // Hijack the feedback link:
 $feedbackLink.on('click', function(event) {
   event.preventDefault();
-  $feedbackArea.slideDown();
+  $feedbackFormArea.slideDown();
 });
