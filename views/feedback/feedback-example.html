@@ -14,6 +14,9 @@
     {% if display == "thanks-message" %}
       {% include "_includes/feedback-thanks.html" %}
     {% endif %}
+    {% if display == "server-error" %}
+      {% include "_includes/feedback-error.html" %}
+    {% endif %}
   </div>
 {% endblock %}
 

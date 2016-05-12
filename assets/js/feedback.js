@@ -10,6 +10,15 @@ $feedbackArea.on('submit', 'form', function(e) {
   });
 });
 
+$feedbackArea.on('click', '#reload', function(e) {
+  e.preventDefault();
+  $feedbackArea.slideUp(function() {
+    $feedbackArea.load('/js-load/feedback-form', function() {
+      $feedbackArea.slideDown();
+    });
+  })
+});
+
 // Handling the various server responses
 var handleResponse = function(data) {
   $feedbackArea.html(data);

@@ -154,8 +154,8 @@ app.post('/feedback/feedback-example/feedback', function(req, res) {
       }
       console.log(response.statusCode);
     } else {
-      res.send({
-        success: false
+      res.render('feedback/feedback-example', {
+        display: 'server-error'
       });
       console.log(response.statusCode + ' and ' + error);
     }
@@ -237,9 +237,7 @@ app.post('/js-submit/feedback-form', function(req, res) {
       }
       console.log(response.statusCode);
     } else {
-      res.send({
-        success: false
-      });
+      res.render('_includes/feedback-error');
       console.log(response.statusCode + ' and ' + error);
     }
   });
