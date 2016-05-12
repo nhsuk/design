@@ -46,9 +46,7 @@ app.get('/', function (req, res) {
 // **************************** ENDPOINT FUNCTIONS *****************************
 
 // Error checking
-var checkInput = function(req) {
-
-  var stage = req.body['stage'];
+var checkInput = function(req, stage) {
 
   if (stage === 'feedback-form') {
     req.checkBody('feedback-form-comments', 'Please add your comments.').notEmpty();
@@ -91,7 +89,7 @@ app.post('/feedback/feedback-example/feedback', function(req, res) {
   var stage = req.body['stage'];
 
   // check for errors
-  var inputErrors = checkInput(req);
+  var inputErrors = checkInput(req, stage);
 
   if (typeof inputErrors !== 'undefined') {
     if (stage === 'feedback-form') {
@@ -178,7 +176,7 @@ app.post('/js-submit/feedback-form', function(req, res) {
   var stage = req.body['stage'];
 
   // check for errors
-  var inputErrors = checkInput(req);
+  var inputErrors = checkInput(req, stage);
 
   if (typeof inputErrors !== 'undefined') {
     if (stage === 'feedback-form') {
@@ -224,8 +222,6 @@ app.post('/js-submit/feedback-form', function(req, res) {
   }
 
   endpointOptions.form = submission;
-
-  console.log(endpointOptions);
 
   request(endpointOptions, function(error, response, body) {
     // 201: resource created

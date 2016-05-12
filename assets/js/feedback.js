@@ -10,6 +10,13 @@ $feedbackArea.on('submit', 'form', function(e) {
   });
 });
 
+$feedbackArea.on('click', '#reset', function(e) {
+  e.preventDefault();
+  $feedbackArea.slideUp(function() {
+    $feedbackArea.load('/js-load/feedback-form');
+  })
+});
+
 $feedbackArea.on('click', '#reload', function(e) {
   e.preventDefault();
   $feedbackArea.slideUp(function() {
