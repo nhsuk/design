@@ -34,7 +34,6 @@
   letter-spacing: 0.5px;
 }
 
-
 /* 999 callout variation */
 
 .callout.emergency {
@@ -65,7 +64,6 @@
 /* GP callout variation */
 
 .callout.gp {
-  padding: $leading*2;
   border: 14px solid $light-blue2;
   margin-bottom: $leading*2;
 }
@@ -89,6 +87,7 @@
 .callout.notice
 {
   background-color: rgba($yellow2, 0.8);
+  margin-bottom: 32px;
 }
 
 .callout.notice p
