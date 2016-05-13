@@ -1,34 +1,30 @@
-<div id="feedback-area">
-  <form name="feedback-form-1" class="feedback-form-container" method="post">
+<form id="feedback-form" class="feedback-form-container" action="/feedback/feedback-example/feedback" method="post">
 
-    {% if errors %}
+  {% if errors %}
+  <div class="grid-row">
+    <div class="grid-2-3">
+      <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+        <h1 class="error-summary-heading heading-large" id="error-summary-heading">
+          Sorry, the feedback was empty. Please make sure to add your comments
+          about this page.
+        </h1>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="form-group {% if errors %}-errors{% endif %}">
+    <label for="feedback-form-comments" class="heading-xlarge">
+      What’s useful about this page? What's missing?
+    </label>
     <div class="grid-row">
       <div class="grid-2-3">
-        <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
-          <h1 class="error-summary-heading heading-large" id="error-summary-heading">
-            Sorry, the feedback was empty. Please make sure to add your comments
-            about this page.
-          </h1>
-        </div>
+        <textarea name="feedback-form-comments" id="feedback-form-comments" rows="4"></textarea>
       </div>
     </div>
-    {% endif %}
+  </div>
 
-    <div class="form-group {% if errors %}-errors{% endif %}">
-      <label for="feedback-form-comments" class="heading-xlarge">
-        What’s useful about this page? What's missing?
-      </label>
-      <div class="grid-row">
-        <div class="grid-2-3">
-          <textarea name="feedback-form-comments" id="feedback-form-comments" rows="4"></textarea>
-        </div>
-      </div>
-    </div>
-
-    <input type="hidden" name="stage" value="feedback-form">
-    <input type="hidden" name="referrer" value="I am a referrer">
-    <input type="hidden" name="page" value="{{ pagetitle }}">
-    <button type="submit" class="button -submit-feedback">Send feedback</button>
-    <a href="/feedback/feedback-example" class="button -cancel">Cancel</a>
-  </form>
-</div>
+  <input type="hidden" name="stage" value="feedback-form">
+  <button type="submit" class="button -submit-feedback">Send feedback</button>
+  <a href="/feedback/feedback-example" id="reset" class="button -cancel">Cancel</a>
+</form>

@@ -1,5 +1,6 @@
 #feedback-area {
-    background-color: tint($feedback-alert-strip, 80) ;
+  position: relative;
+  background-color: tint($feedback-alert-strip, 80);
 }
 
 .feedback-strip {
@@ -13,6 +14,16 @@
 
 .feedback-form-container {
   @extend %block;
-  padding-top: $leading*2;
+  padding-top: 1px;
   padding-bottom: $leading*2;
+}
+
+.feedback-loading-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.8);
+  text-indent: -999em;
 }
