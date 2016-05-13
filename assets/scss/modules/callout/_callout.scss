@@ -53,15 +53,6 @@
 
 }
 
-/* temp hack to make the callout box only appear on smaller viewports */
-.callout.emergency.inpage {
-
-  @include media(640px) {
-    // display: none;
-  }
-
-}
-
 .callout.emergency a {
   color: $light-blue3;
   text-decoration: underline;
