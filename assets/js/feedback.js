@@ -4,7 +4,9 @@ $feedbackLink = $('#feedback-link');
 $feedbackFormArea = $('#feedback-form-area');
 $feedbackLoading = $('#feedback-loading');
 
-$feedbackLoading.addClass('feedback-loading-panel').hide();
+var loadingText = 'Submitting your information, please wait&hellip;';
+
+$feedbackLoading.addClass('feedback-loading-panel').hide().text(loadingText);
 
 // Events
 $feedbackFormArea.on('submit', 'form', function(e) {
