@@ -1,10 +1,12 @@
 .callout {
   padding: $leading $leading*2;
+  clear: both;
 
   > .column-list {
       -webkit-columns: 2;
       -moz-columns: 2;
       columns: 2;
+
   }
   
 }
@@ -16,6 +18,7 @@
   max-width: 34em;
   margin-top: 0;
   padding-top: $leading*2;
+
 
 
   @include media(mid) {
@@ -46,6 +49,15 @@
     font-size: $callout;
     font-weight: $lightweight;
     line-height: $leading*1.5;
+  }
+
+}
+
+/* temp hack to make the callout box only appear on smaller viewports */
+.callout.emergency.inpage {
+
+  @include media(640px) {
+    // display: none;
   }
 
 }
