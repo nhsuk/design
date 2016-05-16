@@ -87,3 +87,10 @@ $gutter: 3.4%;
 .grid-row [class*='grid-'] {
   /*background-color: #eee;*/
 }
+
+// float a column right instead of left
+.f-right {
+  @include media(640px) {
+    float: right;
+  }
+}

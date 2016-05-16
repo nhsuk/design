@@ -1,6 +1,5 @@
 .callout {
   padding: $leading $leading*2;
-  clear: both;
 
   > .column-list {
       -webkit-columns: 2;
@@ -8,7 +7,7 @@
       columns: 2;
 
   }
-  
+
 }
 
 .callout.aside {
