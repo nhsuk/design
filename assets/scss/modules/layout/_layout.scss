@@ -21,3 +21,10 @@ body {
 .content {
   padding-top: $leading*2;
 }
+
+// float a column right instead of left
+.f-right {
+  @include media(640px) {
+    float: right;
+  }
+}

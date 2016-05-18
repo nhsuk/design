@@ -88,9 +88,3 @@ $gutter: 3.4%;
   /*background-color: #eee;*/
 }
 
-// float a column right instead of left
-.f-right {
-  @include media(640px) {
-    float: right;
-  }
-}
