@@ -22,6 +22,9 @@ body {
   padding-top: $leading*2;
 }
 
-.f-right{
-  float: right;
+// float a column right instead of left
+.f-right {
+  @include media(640px) {
+    float: right;
+  }
 }
