@@ -56,35 +56,35 @@ body {
 h1 {
   margin: $leading 0;
   font-size: 40px;
-  font-weight: $lightweight;
+  font-weight: $boldweight;
   line-height: $leading*3;
 
   @include media(mid) {
-    font-size: 50px;
-    font-weight: $lightweight;
+    font-size: 48px;
     line-height: $leading*4;
     letter-spacing: -0.02em;
   }
 
   @include media(large) {
-    font-weight: $bodyweight;
     font-size: 64px;
+    line-height: $leading*5;
   }
 }
 
 h2 {
   margin: $leading 0;
   font-weight: $boldweight;
-  line-height: $leading*2;
+  line-height: $leading*2.5;
   font-size: 28px;
 
   @include media(mid) {
-    font-weight: $boldweight;
     font-size: 32px;
     line-height: $leading*3;
   }
 
   @include media(large) {
+    font-size: 36px;
+    line-height: $leading*3;
   }
 }
 
@@ -93,10 +93,6 @@ h3 {
   font-size: 24px;
   font-weight: $boldweight;
   line-height: $leading*2;
-
-  @include media(large) {
-
-  }
 }
 
 h4 {
@@ -118,9 +114,6 @@ p.lede {
   font-weight: $lightweight;
   color: $light-blue3;
 
-  @include media(large) {
-    // font-size: 24px;
-  }
 }
 
 .smallprint {
