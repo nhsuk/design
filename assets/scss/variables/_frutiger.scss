@@ -1,20 +1,5 @@
 @import url('http://fast.fonts.net/cssapi/0985eb4d-eec4-488b-baa4-22fe85c5ce32.css');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $body: 20px;
 $leading: 16px;
 $family: "Frutiger W01", sans-serif;
@@ -42,12 +27,11 @@ h1 {
   margin: 0; padding: $leading 0;
   font-size: 40px;
   font-weight: $boldweight;
-  line-height: $leading*5;
+  line-height: $leading*3;
 
   @include media(mid) {
     font-size: 48px;
     line-height: $leading*4;
-    letter-spacing: -0.02em;
   }
 
   @include media(large) {
@@ -62,19 +46,22 @@ h2 {
   font-weight: $boldweight;
   line-height: $leading*3;
 
+  @include media(mid) {
+    font-size: 32px;
+    line-height: $leading*3;
+  }
+
   @include media(large) {
+    font-size: 36px;
+    line-height: $leading*3;
   }
 }
 
 h3 {
   margin: 0; padding: $leading 0;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: $boldweight;
-  //line-height: $leading*2;
-  line-height: 30px;
-
-  @include media(large) {
-  }
+  line-height: $leading*2;
 }
 
 h4 {
@@ -82,4 +69,19 @@ h4 {
   font-size: $body;
   font-weight: $boldweight;
   line-height: $leading*2;
+}
+
+p.lede {
+  margin: 0 0 $leading*2 0;
+  font-size: $body;
+  letter-spacing: 0.03em;
+  line-height: $leading*2;
+  font-weight: $lightweight;
+  color: $light-blue3;
+
+}
+
+.smallprint {
+  font-size: $smallprint;
+  color: $smallprint-grey;
 }
