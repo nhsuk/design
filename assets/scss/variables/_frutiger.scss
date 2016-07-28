@@ -1,11 +1,30 @@
-@import url('http://fast.fonts.net/cssapi/50c9c92a-7fe0-4c8b-bd64-c7d3d2fafc87.css');
+@import url('http://fast.fonts.net/cssapi/0985eb4d-eec4-488b-baa4-22fe85c5ce32.css');
 
-$body: 18px;
-$leading: 12px;
-$family: "Neue Frutiger W01", sans-serif;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$body: 20px;
+$leading: 16px;
+$family: "Frutiger W01", sans-serif;
+$lightweight: 200;
 $bodyweight: 400;
-$boldweight: 600;
-$heavyweight: 600;
+$boldweight: 700;
+$heavyweight: 800;
+$smallprint: 14px;
+$feedback: 16px;
+$callout: 18px;
 
 body {
   font-family: $family;
@@ -21,18 +40,26 @@ body {
 
 h1 {
   margin: 0; padding: $leading 0;
-  font-size: 56px;
-  font-weight: $bodyweight;
+  font-size: 40px;
+  font-weight: $boldweight;
   line-height: $leading*5;
 
+  @include media(mid) {
+    font-size: 48px;
+    line-height: $leading*4;
+    letter-spacing: -0.02em;
+  }
+
   @include media(large) {
+    font-size: 64px;
+    line-height: $leading*5;
   }
 }
 
 h2 {
   margin: 0; padding: $leading 0;
   font-size: 32px;
-  font-weight: $bodyweight;
+  font-weight: $boldweight;
   line-height: $leading*3;
 
   @include media(large) {
@@ -42,7 +69,7 @@ h2 {
 h3 {
   margin: 0; padding: $leading 0;
   font-size: 26px;
-  font-weight: $bodyweight;
+  font-weight: $boldweight;
   //line-height: $leading*2;
   line-height: 30px;
 
@@ -53,6 +80,6 @@ h3 {
 h4 {
   margin: 0; padding: $leading 0;
   font-size: $body;
-  font-weight: $bodyweight;
+  font-weight: $boldweight;
   line-height: $leading*2;
 }
