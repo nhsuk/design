@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>
+    {% if pagetitle %}{{ pagetitle }} | {% endif %}NHS.UK
+  </title>
+
+  <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <!-- Load in Furtiger style sheet -->
+  <!-- <link href="/css/variables/frutiger.css" media="screen" rel="stylesheet" type="text/css" /> -->
+
+</head>
+<body>
+
+{% include "_includes/header-global.html" %}
+
+<main>
+  {% block localheader %}{% endblock %}
+  {% block content %}{% endblock %}
+</main>
+
+{% include "_includes/footer-global.html" %}
+
+{% if GOOGLE_ANALYTICS_TRACKING_ID %}
+  {% include "_includes/google-analytics.html" %}
+{% endif %}
+
+{% if MOUSE_STATS_ACCOUNT_ID %}
+  {% include "_includes/mouse-stats-analytics.html" %}
+{% endif %}
+
+</body>
+</html>
