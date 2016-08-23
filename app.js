@@ -1,5 +1,6 @@
 var express = require('express');
 var nunjucks = require('express-nunjucks');
+var helmet = require('helmet');
 var request = require('request');
 var bodyParser = require('body-parser');
 var validator = require('express-validator');
@@ -32,6 +33,42 @@ nunjucks.setup({
 app.use(cookieSession({
   secret: 'tborqwitno'
 }));
+
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: [
+      '\'self\''
+    ],
+    scriptSrc: [
+      '\'self\'',
+      '\'unsafe-inline\'',
+      'www.google-analytics.com'
+    ],
+    imgSrc: [
+      '\'self\'',
+      'data:',
+      'www.google-analytics.com'
+    ],
+    styleSrc: [
+      '\'self\'',
+      '\'unsafe-inline\'',
+      'fast.fonts.net'
+    ],
+    fontSrc: [
+      'fast.fonts.net'
+    ],
+    connectSrc: [
+      '\'self\''
+    ]
+  }
+}));
+app.use(helmet.xssFilter());
+app.use(helmet.frameguard({
+  action: 'deny',
+}));
+app.use(helmet.hidePoweredBy());
+app.use(helmet.ieNoOpen());
+app.use(helmet.noSniff());
 
 app.use(function (req, res, next) {
   // Generate a v4 (random) id like '110ec58a-a0f2-4ac4-8393-c866d813b8d1'
@@ -264,6 +301,7 @@ app.get(/^\/([^.]+)$/, function (req, res) {
         }
       });
     } else {
+      res.header("Content-Type", "text/html");
       res.end(html);
     }
   });
